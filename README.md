@@ -12,7 +12,7 @@ The referenced book is published in Springer Nature and is available under the f
 
 jamoviRWTH is an add-on module for jamovi which combines all analyses in the chapters *Descriptives* and *Inference* of the book "Grundlagen der Wahrscheinlichkeitsrechnung und Statistik" by E. Cramer and U. Kamps (2020).  jamoviRWTH can also be installed as an R package. 
 
-A short starting guide for jamoviRWTH in German is available [*here*](https://github.com/drauwolf/jamoviRWTH/blob/main/Anleitung_2026.08.31.pdf). For an english starting guide to jamovi (or other languages), please refer to https://www.jamovi.org/getting-started.html and https://docs.jamovi.org/.
+A short starting guide for jamoviRWTH in German is available [*here*](https://github.com/drauwolf/jamoviRWTH-release/blob/main/Anleitung_2026.08.31.pdf). For an english starting guide to jamovi (or other languages), please refer to https://www.jamovi.org/getting-started.html and https://docs.jamovi.org/.
 
 
 ## Credits
