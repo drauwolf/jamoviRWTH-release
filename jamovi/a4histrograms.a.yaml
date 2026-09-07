@@ -1,0 +1,116 @@
+---
+name:  a4histrograms
+title: Grouped Data and Histograms (A4)
+menuGroup: Descriptives
+version: '1.0.0'
+jas: '1.2'
+
+options:
+    - name: data
+      type: Data
+      description:
+          R: the data as a data frame
+
+    - name: deps
+      title: Variables
+      type: Variables
+      suggested:
+        - continuous
+      permitted:
+        - numeric
+      rejectInf: false
+      description:
+          ui: >
+            the dependent variables -- a separate t-test is performed for each
+            dependent variable specified.
+          R: >
+            the dependent variables (not necessary when using a formula, see
+            the examples)
+            
+    - name: categvar
+      title: Variable
+      type: Variable
+      suggested: 
+        - continuous
+      permitted:
+        - numeric
+      rejectInf: false
+
+    - name: previewplot
+      title: Preview of histogram
+      type: Bool
+      default: false 
+      
+    - name: previewtable
+      title: Frequency table
+      type: Bool
+      default: false 
+      
+    - name: equitable
+      title: Frequency table
+      type: Bool
+      default: false 
+      
+    - name: checkboxequi
+      title: Equidistant histogram
+      type: Bool
+      default: false 
+      
+    - name: equibins
+      title:  equidistant no of bins =
+      type: Number
+      default: 10
+            
+    - name: checkboxcateg
+      title: Categories with breaks at
+      type: Bool
+      default: false  
+            
+    - name: breakValues
+      title: Break values
+      type: String
+      default: "1,2,3"
+      description:
+          R: >
+            a comma-sepated list (default: 1,2,3) specifying the breaks of the categories and the histogram.
+            
+    - name: propfactorcateg
+      title: proportionality factor for categ
+      type: Bool
+      default: false  
+      
+    - name: ccateg
+      title:  c = 
+      type: Number
+      min: 0
+      default: 1
+      description:
+          ui: >
+            proportionality factor for the height of the categories.
+          R: >
+            a number greater than 1 (default: 1), proportionality factor for 
+            the height of the categories.
+            
+    - name: propfactorequi
+      title: proportionality factor for equi
+      type: Bool
+      default: false  
+      
+    - name: cequi
+      title:  c = 
+      type: Number
+      min: 0
+      default: 1
+      description:
+          ui: >
+            proportionality factor for the height of the categories.
+          R: >
+            a number greater than 1 (default: 1), proportionality factor for 
+            the height of the categories.
+            
+    - name: categtable
+      title: Frequency table
+      type: Bool
+      default: false
+
+...

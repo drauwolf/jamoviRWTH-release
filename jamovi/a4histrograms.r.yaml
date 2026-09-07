@@ -1,0 +1,80 @@
+---
+name:  a4histrograms
+title: Grouped Data and Histograms (A4)
+jrs:   '1.1'
+
+items:
+    - name: hists
+      title: Data and Histograms with equidistant bins
+      type: Array
+      
+      items: (c(deps))
+      template:
+          title: Data and Histograms for $key
+          type: Group
+          
+          items: 
+              - name:  previewplot
+                title: Preview
+                type:  Image
+                visible: (previewplot)
+                renderFun: .hist
+                
+              - name: summarytable
+                title: Summary statistics
+                visible: (previewplot)
+                type: Table
+                rows: 0
+                columns: 
+                  - name: minimum
+                    title: Minimum
+                    type: number
+                  - name: maximum
+                    title: Maximum
+                    type: number
+                  - name: datalength
+                    title: Sample size
+                    type: number
+                  - name: noofbins
+                    title: Max. number of bins recommended
+                    type: number
+                  - name: aequi
+                    title: Width of equidistant bins in preview
+                    type: number
+                
+              - name: previewtable
+                title: Table for equidistantly grouped data
+                type: Table
+                visible: (previewplot & previewtable)
+                columns: []
+                    
+              - name:  equiplot
+                title: Equidistant
+                type:  Image
+                visible: (checkboxequi)
+                renderFun: .hist
+                
+              - name: equitable
+                title: Table for equidistantly grouped data
+                type: Table
+                visible: (checkboxequi & equitable)
+                columns: []
+    
+    - name: categhist
+      title: Data and Histograms with custom categories
+      type: Group
+      
+      items:
+          - name:  categplot
+            title: Categories
+            type:  Image
+            visible: (checkboxcateg)
+            renderFun: .hist
+            
+          - name: categtable
+            title: Table for grouped data
+            type: Table
+            visible: (checkboxcateg & categtable)
+            columns: []
+
+...

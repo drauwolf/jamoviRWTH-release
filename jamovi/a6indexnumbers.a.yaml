@@ -1,0 +1,106 @@
+---
+name:  a6indexnumbers
+title: Index Numbers (A6)
+menuGroup: Descriptives
+version: '1.0.0'
+jas: '1.2'
+
+options:
+    - name: data
+      type: Data
+      
+    - name: var
+      title: Variable
+      type: Variable
+      permitted:
+        - numeric
+      suggested:
+        - continuous
+        
+    - name: indexnum
+      title: Elementary index number with k =
+      type: Output
+      
+    - name: k
+      type: Integer
+      min: 0
+      
+    - name: growthfac
+      title: Growth factors
+      type: Output
+      
+    - name: growthrate
+      title: Growth rates
+      type: Output
+
+    - name: basket0
+      title: basket
+      type: Variable
+      permitted:
+        - numeric
+      suggested:
+        - continuous
+
+    - name: price0
+      type: Variable
+      permitted:
+        - numeric
+      suggested:
+        - continuous
+        
+    - name: baskett
+      title: basket
+      type: Variable
+      permitted:
+        - numeric
+      suggested:
+        - continuous
+
+    - name: pricet
+      type: Variable
+      permitted:
+        - numeric
+      suggested:
+        - continuous
+      
+    - name: plas
+      title: Laspeyres
+      type: Bool
+      default: false
+      
+    - name: ppaa
+      title: Paasche
+      type: Bool
+      default: false
+      
+    - name: pfi
+      title: Fisher
+      type: Bool
+      default: false
+      
+    - name: qlas
+      title: Laspeyres
+      type: Bool
+      default: false
+      
+    - name: qpaa
+      title: Paasche
+      type: Bool
+      default: false
+      
+    - name: qfi
+      title: Fisher
+      type: Bool
+      default: false
+      
+    - name: val
+      title: Value Index
+      type: Bool
+      default: false
+      
+    - name: valBask
+      title: Values of the baskets
+      type: Bool
+      default: false
+      
+...

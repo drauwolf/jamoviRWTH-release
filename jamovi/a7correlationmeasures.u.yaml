@@ -1,0 +1,185 @@
+title: Measures of Correlation and Dependence (A7)
+name: a7correlationmeasures
+jus: '3.0'
+stage: 0
+compilerMode: tame
+children:
+  - type: CollapseBox
+    label: Categorical Data - Input Contingency Table
+    collapsed: false
+    children:
+      - type: VariableSupplier
+        persistentItems: false
+        stretchFactor: 1
+        children:
+          - type: TargetLayoutBox
+            label: Rows in Contingency Table
+            children:
+              - type: VariablesListBox
+                name: nominalcont1
+                maxItemCount: 1
+                isTarget: true
+          - type: TargetLayoutBox
+            label: Columns in Contingency Table
+            children:
+              - type: VariablesListBox
+                name: nominalcont2
+                maxItemCount: 1
+                isTarget: true
+          - type: TargetLayoutBox
+            label: Counts in Contingency Table
+            children:
+              - type: VariablesListBox
+                name: contCounts
+                maxItemCount: 1
+                isTarget: true
+      - type: LayoutBox
+        style: inline
+        stretchFactor: 1
+        margin: large
+        children:
+          - type: LayoutBox
+            stretchFactor: 1
+            margin: large
+            children:
+              - type: Label
+                label: Categorical Data
+                children:
+                  - type: CheckBox
+                    name: cont_abs_table
+                  - type: CheckBox
+                    name: cont_rel_table
+                  - type: CheckBox
+                    name: cont_row_table
+                  - type: CheckBox
+                    name: cont_col_table
+                  - type: CheckBox
+                    name: cont_chi2
+                  - type: CheckBox
+                    name: cont_Ccor
+                  - type: CheckBox
+                    name: cont_Cstern
+  - type: CollapseBox
+    label: Categorical Data
+    collapsed: false
+    children:
+      - type: VariableSupplier
+        persistentItems: false
+        stretchFactor: 1
+        children:
+          - type: TargetLayoutBox
+            label: Row
+            children:
+              - type: VariablesListBox
+                name: nominal1
+                maxItemCount: 1
+                isTarget: true
+          - type: TargetLayoutBox
+            label: Column
+            children:
+              - type: VariablesListBox
+                name: nominal2
+                maxItemCount: 1
+                isTarget: true
+      - type: LayoutBox
+        style: inline
+        stretchFactor: 1
+        margin: large
+        children:
+          - type: LayoutBox
+            stretchFactor: 1
+            margin: large
+            children:
+              - type: Label
+                label: Categorical Data
+                children:
+                  - type: CheckBox
+                    name: nominal_abs_table
+                  - type: CheckBox
+                    name: nominal_rel_table
+                  - type: CheckBox
+                    name: nominal_row_table
+                  - type: CheckBox
+                    name: nominal_col_table
+                  - type: CheckBox
+                    name: nominal_chi2
+                  - type: CheckBox
+                    name: nominal_Ccor
+                  - type: CheckBox
+                    name: nominal_Cstern
+  - type: CollapseBox
+    label: Metric Data
+    collapsed: false
+    children:
+      - type: VariableSupplier
+        persistentItems: false
+        stretchFactor: 1
+        children:
+          - type: TargetLayoutBox
+            label: First Dependent Variable
+            children:
+              - type: VariablesListBox
+                name: metric1
+                maxItemCount: 1
+                isTarget: true
+          - type: TargetLayoutBox
+            label: Second Dependent Variable
+            children:
+              - type: VariablesListBox
+                name: metric2
+                maxItemCount: 1
+                isTarget: true
+      - type: LayoutBox
+        style: inline
+        stretchFactor: 1
+        margin: large
+        children:
+          - type: LayoutBox
+            stretchFactor: 1
+            margin: large
+            children:
+              - type: Label
+                label: Metric Data
+                children:
+                  - type: CheckBox
+                    name: metric_empKov
+                  - type: CheckBox
+                    name: metric_bpKor
+                  - type: CheckBox
+                    name: metric_streu
+  - type: CollapseBox
+    label: Ordinal Data
+    collapsed: false
+    children:
+      - type: VariableSupplier
+        persistentItems: false
+        stretchFactor: 1
+        children:
+          - type: TargetLayoutBox
+            label: First Dependent Variable
+            children:
+              - type: VariablesListBox
+                name: ordinal1
+                maxItemCount: 1
+                isTarget: true
+          - type: TargetLayoutBox
+            label: Second Dependent Variable
+            children:
+              - type: VariablesListBox
+                name: ordinal2
+                maxItemCount: 1
+                isTarget: true
+      - type: LayoutBox
+        style: inline
+        stretchFactor: 1
+        margin: large
+        children:
+          - type: LayoutBox
+            stretchFactor: 1
+            margin: large
+            children:
+              - type: Label
+                label: Ordinal Data
+                children:
+                  - type: CheckBox
+                    name: ordinal_spearman

@@ -1,0 +1,77 @@
+---
+name:  a8linearregression
+title: Regression Analysis (A8)
+jrs:   '1.1'
+
+items:
+    - name:  text
+      title: Regression Analysis
+      type:  Preformatted
+      
+    - name:  linreg
+      title: Linear Regression (least squares)
+      visible: (linReg || bpKor || B)
+      type: Table
+      rows:  0
+      columns:
+        - name: a_hat
+          title: â
+          type: number
+          visible: (linReg & !linRegIntercept)
+        - name: b_hat
+          title:  b̂
+          type: number
+          visible: (linReg)
+        - name: r
+          type: number
+          visible: (bpKor)
+        - name: B
+          type: number
+          visible: (B)
+
+    - name: residsOV
+      title: Residuals
+      type: Output
+      varTitle: Residuals
+      varDescription: Residuals from linear regression
+      measureType: continuous
+      
+    - name: normedresidsOV
+      title: Normed residuals
+      type: Output
+      varTitle: Normed residuals
+      varDescription: Normalized residuals from linear regression
+      measureType: continuous
+      
+    - name: predictionsOV
+      title: Predictions
+      type: Output
+      varTitle: Predictions
+      varDescription: Predictions from linear regression
+      measureType: continuous
+      
+    - name: scatterplot
+      title: Scatterplot
+      type: Image
+      visible: (scatter)
+      renderFun: .scatplot
+      
+    - name: resplot
+      title: Plot of residuals
+      type: Image
+      visible: (resPlot)
+      renderFun: .resplot
+      
+    - name: predtable
+      title: Prediction of a value
+      visible: (pred)
+      type: Table
+      rows: 0
+      columns: 
+        - name: xvalue
+          title: x
+        - name: prediction
+          title: Prediction
+      
+
+...

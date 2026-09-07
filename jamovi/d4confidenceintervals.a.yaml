@@ -1,0 +1,242 @@
+---
+name:  d4confidenceintervals
+title: Confidence Intervals (D4/D5)
+menuGroup: Inference
+version: '1.0.0'
+jas: '1.2'
+
+options:
+    - name: data
+      type: Data
+      
+    - name: varnorm
+      title: Variable
+      type: Variable
+      permitted:
+        - numeric
+      suggested:
+        - continuous
+        
+    - name: normalpha
+      title: With confidence level 1-α =
+      type: Number
+      default: 0.95
+      
+    - name: muunknownvar
+      title: For μ with unknown σ²
+      type: Bool
+      default: FALSE
+      
+    - name: sidemuunknownvar
+      title: Side
+      type: List
+      options:
+        - title: One-Sided lower
+          name:  lowermuunknownvar
+        - title: One-Sided upper
+          name:  uppermuunknownvar
+        - title: Two-Sided
+          name:  twomuunknownvar
+      default: twomuunknownvar
+    
+    - name: muknownvar
+      title: For μ with known 
+      type: Bool
+      default: FALSE 
+      
+    - name: sigmasq
+      type: Number
+      default: 1
+      
+    - name: sidemuknownvar
+      title: Side
+      type: List
+      options:
+        - title: One-Sided lower
+          name:  lowermuknownvar
+        - title: One-Sided upper
+          name:  uppermuknownvar
+        - title: Two-Sided
+          name:  twomuknownvar
+      default: twomuknownvar
+      
+    - name: n
+      title: numbers of observations for interval
+      type: Bool
+      default: false
+      
+    - name: L0
+      type: Number
+      default: 1
+      
+    - name: sigmaunknownmu
+      title: For σ with unknown μ
+      type: Bool
+      default: FALSE
+      
+    - name: sidesigmaunknownmu
+      title: Side
+      type: List
+      options:
+        - title: One-Sided lower
+          name:  lowersigmaunknownmu
+        - title: One-Sided upper
+          name:  uppersigmaunknownmu
+        - title: Two-Sided
+          name:  twosigmaunknownmu
+      default: twosigmaunknownmu
+    
+    - name: sigmaknownmu
+      title: For σ with known 
+      type: Bool
+      default: FALSE
+
+    - name: mu
+      type: Number
+      default: 0
+      
+    - name: sidesigmaknownmu
+      title: Side
+      type: List
+      options:
+        - title: One-Sided lower
+          name:  lowersigmaknownmu
+        - title: One-Sided upper
+          name:  uppersigmaknownmu
+        - title: Two-Sided
+          name:  twosigmaknownmu
+      default: twosigmaknownmu
+
+    - name: varnormtwosample
+      title: Variable
+      type: Variable
+      permitted:
+        - numeric
+      suggested:
+        - continuous
+        
+    - name: split
+      title: Split by
+      type: Variable
+      permitted:
+        - factor
+      suggested: 
+        - nominal
+        - ordinal
+
+    - name: normalphatwosample
+      title: With confidence level 1-α =
+      type: Number
+      default: 0.95
+      
+    - name: diff
+      title: For δ=μ₁-μ₂ with unknown equal variances
+      type: Bool
+      default: FALSE
+      
+    - name: sidediff
+      title: Side
+      type: List
+      options:
+        - title: One-Sided lower
+          name:  lowerdiff
+        - title: One-Sided upper
+          name:  upperdiff
+        - title: Two-Sided
+          name:  twodiff
+      default: twodiff
+      
+    - name: varbinom
+      title: Variable
+      type: Variable
+      permitted:
+        - numeric
+      suggested:
+        - continuous
+
+    - name: binalpha
+      title: With confidence level 1-α =
+      type: Number
+      default: 0.95
+      
+    - name: exact
+      title: Exact confidence intervals for p 
+      type: Bool
+      default: FALSE
+      
+    - name: sidebinexact
+      title: Side
+      type: List
+      options:
+        - title: One-Sided lower
+          name:  lowerbinexact
+        - title: One-Sided upper
+          name:  upperbinexact
+        - title: Two-Sided
+          name:  twobinexact
+      default: twobinexact
+      
+    - name: approx
+      title: Approximate confidence intervals for p
+      type: Bool
+      default: FALSE
+      
+    - name: sidebinapprox
+      title: Side
+      type: List
+      options:
+        - title: One-Sided lower
+          name:  lowerbinapprox
+        - title: One-Sided upper
+          name:  upperbinapprox
+        - title: Two-Sided
+          name:  twobinapprox
+      default: twobinapprox
+    
+    - name: varexp
+      title: Variable
+      type: Variable
+      permitted:
+        - numeric
+      suggested:
+        - continuous
+    
+    - name: expalpha
+      title: With confidence level 1-α =
+      type: Number
+      default: 0.95
+      
+    - name: lambda
+      title: For λ
+      type: Bool
+      default: FALSE
+      
+    - name: sideexp
+      title: Side
+      type: List
+      options:
+        - title: One-Sided lower
+          name:  lowerexp
+        - title: One-Sided upper
+          name:  upperexp
+        - title: Two-Sided
+          name:  twoexp
+      default: twoexp
+      
+    - name: beta
+      title: For β, where β=1/λ
+      type: Bool
+      default: FALSE
+      
+    - name: sidebetaexp
+      title: Sidebeta
+      type: List
+      options:
+        - title: One-Sided lower
+          name:  lowerbetaexp
+        - title: One-Sided upper
+          name:  upperbetaexp
+        - title: Two-Sided
+          name:  twobetaexp
+      default: twobetaexp
+...

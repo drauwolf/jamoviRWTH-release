@@ -1,0 +1,438 @@
+title: Confidence Intervals (D4/D5)
+name: d4confidenceintervals
+jus: '3.0'
+stage: 0
+compilerMode: tame
+children:
+  - type: CollapseBox
+    label: Exponential distribution
+    collapsed: false
+    children:
+      - type: VariableSupplier
+        persistentItems: false
+        stretchFactor: 1
+        children:
+          - type: TargetLayoutBox
+            label: Variable
+            children:
+              - type: VariablesListBox
+                name: varexp
+                maxItemCount: 1
+                isTarget: true
+      - type: LayoutBox
+        margin: large
+        children:
+          - type: TextBox
+            name: expalpha
+            format: number
+      - type: LayoutBox
+        style: inline
+        margin: large
+        children:
+          - type: LayoutBox
+            stretchFactor: 2
+            margin: large
+            children:
+              - type: Label
+                label: ''
+                children:
+                  - type: CheckBox
+                    name: lambda
+          - type: LayoutBox
+            stretchFactor: 1
+            margin: large
+            children:
+              - type: RadioButton
+                name: Twoexp
+                optionName: sideexp
+                optionPart: twoexp
+                label: Two-sided
+                enable: (lambda)
+              - type: RadioButton
+                name: Lowerexp
+                optionName: sideexp
+                optionPart: lowerexp
+                label: One-sided lower
+                enable: (lambda)
+              - type: RadioButton
+                name: Upperexp
+                optionName: sideexp
+                optionPart: upperexp
+                label: One-sided upper
+                enable: (lambda)
+      - type: LayoutBox
+        style: inline
+        margin: large
+        children:
+          - type: LayoutBox
+            stretchFactor: 2
+            margin: large
+            children:
+              - type: Label
+                label: ''
+                children:
+                  - type: CheckBox
+                    name: beta
+          - type: LayoutBox
+            stretchFactor: 1
+            margin: large
+            children:
+              - type: RadioButton
+                name: Twobetaexp
+                optionName: sidebetaexp
+                optionPart: twobetaexp
+                label: Two-sided
+                enable: (beta)
+              - type: RadioButton
+                name: Lowerbetaexp
+                optionName: sidebetaexp
+                optionPart: lowerbetaexp
+                label: One-sided lower
+                enable: (beta)
+              - type: RadioButton
+                name: Upperbetaexp
+                optionName: sidebetaexp
+                optionPart: upperbetaexp
+                label: One-sided upper
+                enable: (beta)
+  - type: CollapseBox
+    label: Binomial distribution
+    collapsed: false
+    children:
+      - type: VariableSupplier
+        persistentItems: false
+        stretchFactor: 1
+        children:
+          - type: TargetLayoutBox
+            label: Variable
+            children:
+              - type: VariablesListBox
+                name: varbinom
+                maxItemCount: 1
+                isTarget: true
+      - type: LayoutBox
+        margin: large
+        children:
+          - type: TextBox
+            name: binalpha
+            format: number
+      - type: LayoutBox
+        style: inline
+        margin: large
+        children:
+          - type: LayoutBox
+            stretchFactor: 2
+            margin: large
+            children:
+              - type: Label
+                label: ''
+                children:
+                  - type: CheckBox
+                    name: approx
+          - type: LayoutBox
+            stretchFactor: 1
+            margin: large
+            children:
+              - type: RadioButton
+                name: Twobinapprox
+                optionName: sidebinapprox
+                optionPart: twobinapprox
+                label: Two-sided
+                enable: (approx)
+              - type: RadioButton
+                name: Lowerbinapprox
+                optionName: sidebinapprox
+                optionPart: lowerbinapprox
+                label: One-sided lower
+                enable: (approx)
+              - type: RadioButton
+                name: Upperbinapprox
+                optionName: sidebinapprox
+                optionPart: upperbinapprox
+                label: One-sided upper
+                enable: (approx)
+      - type: LayoutBox
+        style: inline
+        margin: large
+        children:
+          - type: LayoutBox
+            stretchFactor: 2
+            margin: large
+            children:
+              - type: Label
+                label: ''
+                children:
+                  - type: CheckBox
+                    name: exact
+          - type: LayoutBox
+            stretchFactor: 1
+            margin: large
+            children:
+              - type: RadioButton
+                name: Twobinexact
+                optionName: sidebinexact
+                optionPart: twobinexact
+                label: Two-sided
+                enable: (exact)
+              - type: RadioButton
+                name: Lowerbinexact
+                optionName: sidebinexact
+                optionPart: lowerbinexact
+                label: One-sided lower
+                enable: (exact)
+              - type: RadioButton
+                name: Upperbinexact
+                optionName: sidebinexact
+                optionPart: upperbinexact
+                label: One-sided upper
+                enable: (exact)
+  - type: CollapseBox
+    label: Normal distribution (One Sample)
+    collapsed: false
+    children:
+      - type: VariableSupplier
+        persistentItems: false
+        stretchFactor: 1
+        children:
+          - type: TargetLayoutBox
+            label: Variable
+            children:
+              - type: VariablesListBox
+                name: varnorm
+                maxItemCount: 1
+                isTarget: true
+      - type: LayoutBox
+        margin: large
+        children:
+          - type: TextBox
+            name: normalpha
+            format: number
+      - type: LayoutBox
+        style: inline
+        margin: large
+        children:
+          - type: LayoutBox
+            stretchFactor: 1
+            margin: large
+            children:
+              - type: Label
+                label: ''
+                children:
+                  - type: CheckBox
+                    name: muknownvar
+                    style: inline
+                    verticalAlignment: center
+                    children:
+                      - type: TextBox
+                        name: sigmasq
+                        label: σ² =
+                        format: number
+                        enable: (muknownvar)
+          - type: LayoutBox
+            stretchFactor: 1
+            margin: large
+            children:
+              - type: RadioButton
+                name: Twomuknownvar
+                optionName: sidemuknownvar
+                optionPart: twomuknownvar
+                label: Two-sided
+                enable: (muknownvar)
+              - type: RadioButton
+                name: Lowermuknownvar
+                optionName: sidemuknownvar
+                optionPart: lowermuknownvar
+                label: One-sided lower
+                enable: (muknownvar)
+              - type: RadioButton
+                name: Uppermuknownvar
+                optionName: sidemuknownvar
+                optionPart: uppermuknownvar
+                label: One-sided upper
+                enable: (muknownvar)
+              - type: CheckBox
+                name: 'n'
+                enable: (muknownvar)
+                children:
+                  - type: TextBox
+                    name: L0
+                    label: with length L₀ ≤
+                    format: number
+                    enable: (n)
+      - type: LayoutBox
+        style: inline
+        margin: large
+        children:
+          - type: LayoutBox
+            stretchFactor: 2
+            margin: large
+            children:
+              - type: Label
+                label: ''
+                children:
+                  - type: CheckBox
+                    name: muunknownvar
+          - type: LayoutBox
+            stretchFactor: 1
+            margin: large
+            children:
+              - type: RadioButton
+                name: Twomuunknownvar
+                optionName: sidemuunknownvar
+                optionPart: twomuunknownvar
+                label: Two-sided
+                enable: (muunknownvar)
+              - type: RadioButton
+                name: Lowermuunknownvar
+                optionName: sidemuunknownvar
+                optionPart: lowermuunknownvar
+                label: One-sided lower
+                enable: (muunknownvar)
+              - type: RadioButton
+                name: Uppermuunknownvar
+                optionName: sidemuunknownvar
+                optionPart: uppermuunknownvar
+                label: One-sided upper
+                enable: (muunknownvar)
+      - type: LayoutBox
+        style: inline
+        margin: large
+        children:
+          - type: LayoutBox
+            stretchFactor: 2
+            margin: large
+            children:
+              - type: Label
+                label: ''
+                children:
+                  - type: CheckBox
+                    name: sigmaunknownmu
+          - type: LayoutBox
+            stretchFactor: 1
+            margin: large
+            children:
+              - type: RadioButton
+                name: Twosigmaunknownmu
+                optionName: sidesigmaunknownmu
+                optionPart: twosigmaunknownmu
+                label: Two-sided
+                enable: (sigmaunknownmu)
+              - type: RadioButton
+                name: Lowersigmaunknownmu
+                optionName: sidesigmaunknownmu
+                optionPart: lowersigmaunknownmu
+                label: One-sided lower
+                enable: (sigmaunknownmu)
+              - type: RadioButton
+                name: Uppersigmaunknownmu
+                optionName: sidesigmaunknownmu
+                optionPart: uppersigmaunknownmu
+                label: One-sided upper
+                enable: (sigmaunknownmu)
+      - type: LayoutBox
+        style: inline
+        margin: large
+        children:
+          - type: LayoutBox
+            stretchFactor: 2
+            margin: large
+            children:
+              - type: Label
+                label: ''
+                children:
+                  - type: CheckBox
+                    name: sigmaknownmu
+                    style: inline
+                    verticalAlignment: center
+                    children:
+                      - type: TextBox
+                        name: mu
+                        label: μ =
+                        format: number
+                        enable: (sigmaknownmu)
+          - type: LayoutBox
+            stretchFactor: 1
+            margin: large
+            children:
+              - type: RadioButton
+                name: Twosigmaknownmu
+                optionName: sidesigmaknownmu
+                optionPart: twosigmaknownmu
+                label: Two-sided
+                enable: (sigmaknownmu)
+              - type: RadioButton
+                name: Lowersigmaknownmu
+                optionName: sidesigmaknownmu
+                optionPart: lowersigmaknownmu
+                label: One-sided lower
+                enable: (sigmaknownmu)
+              - type: RadioButton
+                name: Uppersigmaknownmu
+                optionName: sidesigmaknownmu
+                optionPart: uppersigmaknownmu
+                label: One-sided upper
+                enable: (sigmaknownmu)
+  - type: CollapseBox
+    label: Normal distribution (Two independent samples)
+    collapsed: false
+    children:
+      - type: VariableSupplier
+        persistentItems: false
+        stretchFactor: 1
+        children:
+          - type: TargetLayoutBox
+            label: Variable
+            children:
+              - type: VariablesListBox
+                name: varnormtwosample
+                maxItemCount: 1
+                isTarget: true
+          - type: TargetLayoutBox
+            label: Split by
+            children:
+              - type: VariablesListBox
+                name: split
+                maxItemCount: 1
+                isTarget: true
+      - type: LayoutBox
+        margin: large
+        children:
+          - type: TextBox
+            name: normalphatwosample
+            format: number
+      - type: LayoutBox
+        style: inline
+        margin: large
+        children:
+          - type: LayoutBox
+            stretchFactor: 2
+            margin: large
+            children:
+              - type: Label
+                label: ''
+                children:
+                  - type: CheckBox
+                    name: diff
+          - type: LayoutBox
+            stretchFactor: 1
+            margin: large
+            children:
+              - type: RadioButton
+                name: Twodiff
+                optionName: sidediff
+                optionPart: twodiff
+                label: Two-sided
+                enable: (diff)
+              - type: RadioButton
+                name: Lowerdiff
+                optionName: sidediff
+                optionPart: lowerdiff
+                label: One-sided lower
+                enable: (diff)
+              - type: RadioButton
+                name: Upperdiff
+                optionName: sidediff
+                optionPart: upperdiff
+                label: One-sided upper
+                enable: (diff)
+

@@ -1,0 +1,361 @@
+title: Linear Regression (D7)
+name: d7linearregression
+jus: '3.0'
+stage: 0
+compilerMode: tame
+children:
+  - type: VariableSupplier
+    persistentItems: false
+    stretchFactor: 1
+    children:
+      - type: TargetLayoutBox
+        label: Dependent Variable Y
+        children:
+          - type: VariablesListBox
+            name: yvariable
+            maxItemCount: 1
+            isTarget: true
+      - type: TargetLayoutBox
+        label: Covariate X
+        children:
+          - type: VariablesListBox
+            name: xvariable
+            maxItemCount: 1
+            isTarget: true
+  - type: LayoutBox
+    style: inline
+    stretchFactor: 1
+    margin: large
+    children:
+      - type: LayoutBox
+        stretchFactor: 1
+        margin: large
+        children:
+          - type: Label
+            label: Point estimation
+            children:
+              - type: CheckBox
+                name: linReg
+              - type: CheckBox
+                name: ser
+              - type: CheckBox
+                name: varest
+  - type: LayoutBox
+    margin: large
+    children:
+      - type: LayoutBox
+        margin: large
+        children:
+          - type: Label
+            label: Confidence intervals
+            children:
+              - type: TextBox
+                name: confalpha
+                format: number
+                label:  with confidence level 1-α =
+  - type: LayoutBox
+    style: inline
+    margin: large
+    children:
+      - type: LayoutBox
+        stretchFactor: 0
+        margin: large
+        children:
+          - type: Label
+            label: ''
+            children:
+              - type: CheckBox
+                name: confia
+      - type: LayoutBox
+        stretchFactor: 1
+        margin: large
+        children:
+          - type: RadioButton
+            name: Twoconfa
+            optionName: confsidea
+            optionPart: twoconfa
+            label: Two-sided
+            enable: (confia)
+          - type: RadioButton
+            name: Lowerconfa
+            optionName: confsidea
+            optionPart: lowerconfa
+            label: One-sided lower
+            enable: (confia)
+          - type: RadioButton
+            name: Upperconfa
+            optionName: confsidea
+            optionPart: upperconfa
+            label: One-sided upper
+            enable: (confia)
+          - type: CheckBox
+            name: confiaknownsigma
+            style: inline
+            verticalAlignment: center
+            enable: (confia)
+            children:
+              - type: TextBox
+                name: confiaknownsigmavalue
+                format: number
+                enable: (confiaknownsigma)
+  - type: LayoutBox
+    style: inline
+    margin: large
+    children:
+      - type: LayoutBox
+        stretchFactor: 0
+        margin: large
+        children:
+          - type: Label
+            label: ''
+            children:
+              - type: CheckBox
+                name: confib
+      - type: LayoutBox
+        stretchFactor: 1
+        margin: large
+        children:
+          - type: RadioButton
+            name: Twoconfb
+            optionName: confsideb
+            optionPart: twoconfb
+            label: Two-sided
+            enable: (confib)
+          - type: RadioButton
+            name: Lowerconfb
+            optionName: confsideb
+            optionPart: lowerconfb
+            label: One-sided lower
+            enable: (confib)
+          - type: RadioButton
+            name: Upperconfb
+            optionName: confsideb
+            optionPart: upperconfb
+            label: One-sided upper
+            enable: (confib)
+          - type: CheckBox
+            name: confibknownsigma
+            style: inline
+            verticalAlignment: center
+            enable: (confib)
+            children:
+              - type: TextBox
+                name: confibknownsigmavalue
+                format: number
+                enable: (confibknownsigma)
+  - type: LayoutBox
+    style: inline
+    margin: large
+    children:
+      - type: LayoutBox
+        stretchFactor: 0
+        margin: large
+        children:
+          - type: Label
+            label: ''
+            stretchFactor: 0
+            children:
+              - type: CheckBox
+                name: confisigma
+      - type: LayoutBox
+        stretchFactor: 1
+        margin: large
+        children:
+          - type: RadioButton
+            name: Twoconfsigma
+            optionName: confsidesigma
+            optionPart: twoconfsigma
+            label: Two-sided
+            enable: (confisigma)
+          - type: RadioButton
+            name: Lowerconfsigma
+            optionName: confsidesigma
+            optionPart: lowerconfsigma
+            label: One-sided lower
+            enable: (confisigma)
+          - type: RadioButton
+            name: Upperconfsigma
+            optionName: confsidesigma
+            optionPart: upperconfsigma
+            label: One-sided upper
+            enable: (confisigma)
+  - type: LayoutBox
+    style: inline
+    stretchFactor: 1
+    margin: large
+    children:
+      - type: LayoutBox
+        stretchFactor: 1
+        margin: large
+        children:
+          - type: Label
+            label: ''
+            children:
+              - type: CheckBox
+                name: confif
+                style: inline
+                verticalAlignment: center
+                children:
+                  - type: TextBox
+                    name: confifvalue
+                    label: at x =
+                    format: number
+                    enable: (confif)
+              - type: CheckBox
+                name: confibandf
+  - type: LayoutBox
+    style: inline
+    stretchFactor: 1
+    margin: large
+    children:
+      - type: LayoutBox
+        stretchFactor: 1
+        margin: large
+        children:
+          - type: Label
+            label: Hypothesis tests
+            children:
+              - type: CheckBox
+                name: hyptesta
+                style: inline
+                verticalAlignment: center
+                children:
+                  - type: TextBox
+                    name: testvaluea
+                    label: 'at test value a₀ = '
+                    format: number
+                    enable: (hyptesta)
+      - type: LayoutBox
+        stretchFactor: 1
+        margin: large
+        children:
+          - type: TextBox
+            name: hypalpha
+            format: number
+            label: with significance level α =
+          - type: RadioButton
+            name: Twoa
+            optionName: hyttestsidea
+            optionPart: twoa
+            label: 'H₀: a = a₀ ↔ H₁: a ≠ a₀ '
+            enable: (hyptesta)
+          - type: RadioButton
+            name: Lowera
+            optionName: hyttestsidea
+            optionPart: lowera
+            label: 'H₀: a ≥ a₀ ↔ H₁: a < a₀ '
+            enable: (hyptesta)
+          - type: RadioButton
+            name: Uppera
+            optionName: hyttestsidea
+            optionPart: uppera
+            label: 'H₀: a ≤ a₀ ↔ H₁: a > a₀ '
+            enable: (hyptesta)
+          - type: CheckBox
+            name: hyptestaknownsigma
+            style: inline
+            verticalAlignment: center
+            enable: (hyptesta)
+            children:
+              - type: TextBox
+                name: hyptestaknownsigmavalue
+                format: number
+                enable: (hyptestaknownsigma)
+  - type: LayoutBox
+    style: inline
+    stretchFactor: 1
+    margin: large
+    children:
+      - type: LayoutBox
+        stretchFactor: 1
+        margin: large
+        children:
+          - type: Label
+            label: ''
+            children:
+              - type: CheckBox
+                name: hyptestb
+                style: inline
+                verticalAlignment: center
+                children:
+                  - type: TextBox
+                    name: testvalueb
+                    label: 'at test value b₀ = '
+                    format: number
+                    enable: (hyptestb)
+      - type: LayoutBox
+        stretchFactor: 1
+        margin: large
+        children:
+          - type: RadioButton
+            name: Twob
+            optionName: hyttestsideb
+            optionPart: twob
+            label: 'H₀: b = b₀ ↔ H₁: b ≠ b₀ '
+            enable: (hyptestb)
+          - type: RadioButton
+            name: Lowerb
+            optionName: hyttestsideb
+            optionPart: lowerb
+            label: 'H₀: b ≥ b₀ ↔ H₁: b < b₀ '
+            enable: (hyptestb)
+          - type: RadioButton
+            name: Upperb
+            optionName: hyttestsideb
+            optionPart: upperb
+            label: 'H₀: b ≤ b₀ ↔ H₁: b > b₀ '
+            enable: (hyptestb)
+          - type: CheckBox
+            name: hyptestbknownsigma
+            style: inline
+            verticalAlignment: center
+            enable: (hyptestb)
+            children:
+              - type: TextBox
+                name: hyptestbknownsigmavalue
+                format: number
+                enable: (hyptestbknownsigma)
+  - type: LayoutBox
+    style: inline
+    stretchFactor: 1
+    margin: large
+    children:
+      - type: LayoutBox
+        stretchFactor: 1
+        margin: large
+        children:
+          - type: Label
+            label: ''
+            children:
+              - type: CheckBox
+                name: hyptestsigma
+                style: inline
+                verticalAlignment: center
+                children:
+                  - type: TextBox
+                    name: testvaluesigma
+                    label: 'at test value σ₀² = '
+                    format: number
+                    enable: (hyptestsigma)
+      - type: LayoutBox
+        stretchFactor: 1
+        margin: large
+        children:
+          - type: RadioButton
+            name: Twosigma
+            optionName: hyttestsidesigma
+            optionPart: twosigma
+            label: 'H₀: σ² = σ₀² ↔ H₁: σ² ≠ σ₀² '
+            enable: (hyptestsigma)
+          - type: RadioButton
+            name: Lowersigma
+            optionName: hyttestsidesigma
+            optionPart: lowersigma
+            label: 'H₀: σ² ≥ σ₀² ↔ H₁: σ² < σ₀² '
+            enable: (hyptestsigma)
+          - type: RadioButton
+            name: Uppersigma
+            optionName: hyttestsidesigma
+            optionPart: uppersigma
+            label: 'H₀: σ² ≤ σ₀² ↔ H₁: σ² > σ₀² '
+            enable: (hyptestsigma)

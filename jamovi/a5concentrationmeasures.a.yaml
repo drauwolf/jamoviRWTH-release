@@ -1,0 +1,62 @@
+---
+name:  a5concentrationmeasures
+title: Measures of Concentration (A5)
+menuGroup: Descriptives
+version: '1.0.0'
+jas: '1.2'
+
+options:
+    - name: data
+      type: Data
+
+    - name: var
+      title: Variable
+      type: Variable
+      permitted:
+        - numeric
+      suggested:
+        - continuous
+
+    - name: group
+      title: Split by
+      type: Variable
+      permitted:
+        - factor
+      suggested:
+        - nominal
+        - ordinal
+        
+    - name: plotby
+      title: plot by
+      type: Variable
+      permitted:
+        - factor
+      suggested:
+        - nominal
+        - ordinal
+        
+    - name: Tab
+      title: Tabular data
+      type: Bool
+      default: false
+
+    - name: Lorenz
+      title: Lorenz curve
+      type: Bool
+      default: false
+      
+    - name: Gini
+      title: Gini's ratio
+      type: Bool
+      default: false
+      
+    - name: norm
+      title: normalized
+      type: Bool
+      default: false
+      
+    - name: Herf
+      title: Herfindahl index
+      type: Bool
+      default: false
+...

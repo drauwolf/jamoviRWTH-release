@@ -1,0 +1,102 @@
+---
+name:  d3maximumlikelihood
+title: Maximum Likelihood Estimation (D3/D5)
+jrs:   '1.1'
+
+items:
+    - name:  MLEbin
+      title: Maximum-Likelihood-Estimator for Binomial distribution
+      visible: (bindistr && !is.null(var))
+      type: Table
+      rows:  1
+      columns:
+        - name: par
+          title: Parameter
+          type: text
+        - name: MLE
+          type: number
+
+    - name:  MLEgeo
+      title: Maximum-Likelihood-Estimator for Geometric distribution
+      visible: (geodistr && !is.null(var))
+      type: Table
+      rows:  1
+      columns:
+        - name: par
+          title: Parameter
+          type: text
+        - name: MLE
+          type: number
+          
+    - name:  MLEpo
+      title: Maximum-Likelihood-Estimator for Poisson distribution
+      visible: (podistr && !is.null(var))
+      type: Table
+      rows:  1
+      columns:
+        - name: par
+          title: Parameter
+          type: text
+        - name: MLE
+          type: number
+
+    - name:  MLEnorm
+      title: Maximum-Likelihood-Estimator for Normal distribution
+      visible: (Ndistr && !is.null(var))
+      type: Table
+      rows:  1
+      columns:
+        - name: par
+          title: Parameter
+          type: text
+        - name: MLE
+          type: number
+          
+    - name:  MLEexp
+      title: Maximum-Likelihood-Estimator for Exponential distribution
+      visible: (expdistr && !is.null(var))
+      type: Table
+      rows:  1
+      columns:
+        - name: par
+          title: Parameter
+          type: text
+        - name: MLE
+          type: number
+
+    - name:  MLEunif
+      title: Maximum-Likelihood-Estimator for Uniform distribution
+      visible: (Udistr && !is.null(var))
+      type: Table
+      rows:  1
+      columns:
+        - name: par
+          title: Parameter
+          type: text
+        - name: MLE
+          type: number
+
+    - name:  MLEpar
+      title: Maximum-Likelihood-Estimator for Pareto distribution
+      visible: (pardistr && !is.null(var))
+      type: Table
+      rows:  1
+      columns:
+        - name: par
+          title: Parameter
+          type: text
+        - name: MLE
+          type: number
+
+    - name:  MLEpow
+      title: Maximum-Likelihood-Estimator for Power distribution
+      visible: (powdistr && !is.null(var))
+      type: Table
+      rows:  1
+      columns:
+        - name: par
+          title: Parameter
+          type: text
+        - name: MLE
+          type: number
+...

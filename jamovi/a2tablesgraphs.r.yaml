@@ -1,0 +1,104 @@
+---
+name:  a2tablesgraphs
+title: Tables and Graphs (A2)
+jrs:   '1.1'
+
+items:
+    - name: frequencies
+      title: Frequencies
+      type: Array
+      description: an array of frequency tables
+      visible: (absH)
+
+      items: (c(vars))
+      template:
+          title: Frequency table of $key
+          type: Table
+          visible: (absH)
+          columns: []
+      
+    - name:  stickcharts
+      title: Stick charts
+      type: Array
+      visible: (stick)
+      
+      items: (c(vars))
+      template:
+          title: Stick chart for $key
+          type:  Image
+          visible: (stick)
+          renderFun: .chart
+      
+    - name:  vbarcharts
+      title: Vertical bar charts
+      type: Array
+      visible: (vbar)
+      
+      items: (c(vars))
+      template:
+          title: Vertical bar chart for $key
+          type:  Image
+          visible: (vbar)
+          renderFun: .chart
+      
+    - name:  hbarcharts
+      title: Horizontal bar charts
+      type: Array
+      visible: (hbar)
+      
+      items: (c(vars))
+      template:
+          title: Horizontal bar chart for $key
+          type:  Image
+          visible: (hbar)
+          renderFun: .chart
+          
+    - name:  piecharts
+      title: Pie charts
+      type: Array
+      visible: (pie)
+      
+      items: (c(vars))
+      template:
+          title: ""
+          type: Group
+          visible: (pie)
+          
+          items: 
+              - name: piechartplot
+                title: Pie chart for $key
+                type:  Image
+                visible: (pie)
+                renderFun: .piechartplot
+            
+              - name: piechartangle
+                title: Table for $key
+                type: Table
+                visible: (pie)
+                columns: []
+      
+    - name:  linecharts
+      title: Line charts
+      type: Array
+      visible: (line)
+      
+      items: (c(vars))
+      template:
+        title: Line chart for $key
+        type:  Image
+        visible: (line)
+        renderFun: .chart
+      
+    - name:  ecdfs
+      title: Empirical distribution functions
+      type: Array
+      visible: (empV)
+      
+      items: (c(ecdf))
+      template:
+          title: Empirical distribution function for $key
+          type:  Image
+          visible: (empV)
+          renderFun: .ecdf
+  
+...

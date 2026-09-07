@@ -1,0 +1,181 @@
+---
+name:  a7correlationmeasures
+title: Measures of Correlation and Dependence (A7)
+menuGroup: Descriptives
+version: '1.0.0'
+jas: '1.2'
+
+options:
+    - name: data
+      type: Data
+
+    - name: nominalcont1
+      title: Rows in Contingency Table
+      type: Variable
+      permitted:
+        - factor
+        - id
+      suggested:
+        - nominal
+
+    - name: nominalcont2
+      title: Columns in Contingency Table
+      type: Variable
+      permitted:
+        - factor
+        - id
+      suggested:
+        - nominal
+        
+    - name: contCounts
+      title: Counts in Contingency Table
+      type: Variable
+      suggested:
+        - continuous
+      permitted:
+        - numeric
+
+    - name: nominal1
+      title: Rows
+      type: Variable
+      permitted:
+        - factor
+        - id
+      suggested:
+        - nominal
+
+    - name: nominal2
+      title: Columns
+      type: Variable
+      permitted:
+        - factor
+        - id
+      suggested:
+        - nominal
+        
+    - name: metric1
+      title: First Dependent Variable
+      type: Variable
+      permitted:
+        - numeric
+      suggested:
+        - continuous
+
+    - name: metric2
+      title: Second Dependent Variable
+      type: Variable
+      permitted:
+        - numeric
+      suggested:
+        - continuous
+        
+    - name: ordinal1
+      title: First Dependent Variable
+      type: Variable
+      permitted:
+        - factor
+        - numeric
+      suggested:
+        - ordinal
+        - continuous
+
+    - name: ordinal2
+      title: Second Dependent Variable
+      type: Variable
+      permitted:
+        - factor
+        - numeric
+      suggested:
+        - ordinal
+        - continuous
+
+    - name: cont_abs_table
+      title: Contingency table with absolute frequencies
+      type: Bool
+      default: false
+
+    - name: cont_rel_table
+      title: Contingency table with relative frequencies
+      type: Bool
+      default: false
+
+    - name: cont_row_table
+      title: Conditional distribution on row
+      type: Bool
+      default: false
+      
+    - name: cont_col_table
+      title: Conditional distribution on column
+      type: Bool
+      default: false
+      
+    - name: cont_chi2
+      title: Chi-squared statistic
+      type: Bool
+      default: false
+      
+    - name: cont_Ccor
+      title: Pearson's contingency coefficient
+      type: Bool
+      default: false
+      
+    - name: cont_Cstern
+      title: Pearson's corrected contingency coefficient
+      type: Bool
+      default: false
+
+    - name: nominal_abs_table
+      title: Contingency table with absolute frequencies
+      type: Bool
+      default: false
+      
+    - name: nominal_rel_table
+      title: Contingency table with relative frequencies
+      type: Bool
+      default: false
+  
+    - name: nominal_row_table
+      title: Conditional distribution on row
+      type: Bool
+      default: false
+      
+    - name: nominal_col_table
+      title: Conditional distribution on column
+      type: Bool
+      default: false
+      
+    - name: nominal_chi2
+      title: Chi-squared statistic
+      type: Bool
+      default: false
+      
+    - name: nominal_Ccor
+      title: Pearson's contingency coefficient
+      type: Bool
+      default: false
+      
+    - name: nominal_Cstern
+      title: Pearson's corrected contingency coefficient
+      type: Bool
+      default: false
+      
+    - name: ordinal_spearman
+      title: Spearman's rank correlation coefficient
+      type: Bool
+      default: false
+    
+    - name: metric_empKov
+      title: Empirical covariance
+      type: Bool
+      default: false
+      
+    - name: metric_bpKor
+      title: Bravais-Pearson correlation coefficient
+      type: Bool
+      default: false
+      
+    - name: metric_streu
+      title: Scatterplot
+      type: Bool
+      default: false
+...

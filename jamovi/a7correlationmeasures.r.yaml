@@ -1,0 +1,193 @@
+---
+name:  a7correlationmeasures
+title: Measures of Correlation and Dependence (A7)
+jrs:   '1.1'
+
+items:
+    - name:  text
+      title: Measures of Correlation and Dependence
+      type:  Preformatted
+      
+    - name: cont_abs_table
+      title: Contingency table with absolute frequencies
+      visible: (cont_abs_table && !is.null(nominalcont1) && !is.null(nominalcont2) && !is.null(contCounts))
+      type: Table
+      description: a table of proportions
+      columns: [ ] 
+      clearWith:
+        - nominalcont1
+        - nominalcont2
+        - contCounts
+
+    - name: cont_rel_table
+      title: Contingency table with relative frequencies
+      visible: (cont_rel_table && !is.null(nominalcont1) && !is.null(nominalcont2) && !is.null(contCounts))
+      type: Table
+      description: a table of proportions
+      columns: [ ]
+      clearWith:
+        - nominalcont1
+        - nominalcont2
+        - contCounts
+
+    - name: cont_row_table
+      title: Conditional contingency table on row
+      visible: (cont_row_table && !is.null(nominalcont1) && !is.null(nominalcont2) && !is.null(contCounts))
+      type: Table
+      description: a table of proportions
+      columns: [ ]
+      clearWith:
+        - nominalcont1
+        - nominalcont2
+        - contCounts
+      
+    - name: cont_col_table
+      title: Conditional contingency table on column
+      visible: (cont_col_table && !is.null(nominalcont1) && !is.null(nominalcont2) && !is.null(contCounts))
+      type: Table
+      description: a table of proportions
+      columns: [ ]
+      clearWith:
+        - nominalcont1
+        - nominalcont2
+        - contCounts
+      
+    - name:  cont_table
+      title: Measures of Correlation and Dependence for Categorical Data
+      visible: (cont_chi2 || cont_Ccor || cont_Cstern) 
+      type: Table
+      rows:  0
+      columns:
+        - name: var
+          title: ''
+          type: text
+        - name:  chi.2
+          title: χ²
+          type: number
+          visible: (cont_chi2)
+        - name: C
+          title: C
+          type: number
+          visible: (cont_Ccor)
+        - name: CStern
+          title: C*
+          type: number
+          visible: (cont_Cstern)
+      clearWith:
+        - nominalcont1
+        - nominalcont2
+        - contCounts
+
+      
+    - name: nominal_abs_table
+      title: Contingency table with absolute frequencies
+      visible: (nominal_abs_table && !is.null(nominal1) && !is.null(nominal2))
+      type: Table
+      description: a table of proportions
+      columns: [ ]
+      clearWith:
+        - nominal1
+        - nominal2
+      
+    - name: nominal_rel_table
+      title: Contingency table with relative frequencies
+      visible: (nominal_rel_table && !is.null(nominal1) && !is.null(nominal2))
+      type: Table
+      description: a table of proportions
+      columns: [ ]
+      clearWith:
+        - nominal1
+        - nominal2
+      
+    - name: nominal_row_table
+      title: Conditional contingency table on row
+      visible: (nominal_row_table && !is.null(nominal1) && !is.null(nominal2))
+      type: Table
+      description: a table of proportions
+      columns: [ ]
+      clearWith:
+        - nominal1
+        - nominal2
+      
+    - name: nominal_col_table
+      title: Conditional contingency table on column
+      visible: (nominal_col_table && !is.null(nominal1) && !is.null(nominal2))
+      type: Table
+      description: a table of proportions
+      columns: [ ]
+      clearWith:
+        - nominal1
+        - nominal2
+      
+    - name:  nominal_table
+      title: Measures of Correlation and Dependence for Categorical Data
+      visible: (nominal_chi2 || nominal_Ccor || nominal_Cstern)
+      type: Table
+      rows:  0
+      columns:
+        - name: var
+          title: ''
+          type: text
+        - name:  chi.2
+          title: χ²
+          type: number
+          visible: (nominal_chi2)
+        - name: C
+          title: C
+          type: number
+          visible: (nominal_Ccor)
+        - name: CStern
+          title: C*
+          type: number
+          visible: (nominal_Cstern)
+      clearWith:
+        - nominal1
+        - nominal2
+      
+    - name:  metric_table
+      title: Measures of Correlation and Dependence for Metric Data
+      visible: (metric_empKov || metric_bpKor)
+      type: Table
+      rows:  0
+      columns:
+        - name: var
+          title: ''
+          type: text
+        - name: sxy
+          title: sₓᵧ
+          type: number
+          visible: (metric_empKov)
+        - name: r
+          type: number
+          visible: (metric_bpKor)
+      clearWith:
+        - metric1
+        - metric2
+      
+    - name: scatterplot
+      title: Scatterplot
+      type: Image
+      visible: (metric_streu)
+      renderFun: .scatplot
+      clearWith:
+        - metric1
+        - metric2
+      
+    - name:  ordinal_table
+      title: Measures of Correlation and Dependence for Ordinal Data
+      visible: (ordinal_spearman) 
+      type: Table
+      rows:  0
+      columns:
+        - name: var
+          title: ''
+          type: text
+        - name: rSP
+          title: rₛₚ
+          type: number
+          visible: (ordinal_spearman)
+      clearWith:
+        - ordinal1
+        - ordinal2
+
+...

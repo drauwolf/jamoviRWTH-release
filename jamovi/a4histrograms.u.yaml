@@ -1,0 +1,132 @@
+title: Grouped Data and Histograms (A4)
+name: a4histrograms
+jus: '3.0'
+stage: 0
+compilerMode: tame
+children:
+  - type: VariableSupplier
+    persistentItems: false
+    stretchFactor: 1
+    children:
+      - type: TargetLayoutBox
+        label: Variables
+        children:
+          - type: VariablesListBox
+            name: deps
+            isTarget: true
+  - type: LayoutBox
+    style: inline
+    stretchFactor: 1
+    margin: large
+    children:
+      - type: LayoutBox
+        stretchFactor: 1
+        margin: large
+        children:
+          - type: Label
+            label: Preview
+            children:
+              - type: LayoutBox
+                children:
+                  - type: CheckBox
+                    name: previewplot
+                    label: Histogram
+                    style: inline
+                    verticalAlignment: center
+                    children:
+                      - type: CheckBox
+                        name: previewtable
+                        enable: (previewplot)
+  - type: LayoutBox
+    style: inline
+    stretchFactor: 1
+    margin: large
+    children:
+      - type: LayoutBox
+        stretchFactor: 1
+        margin: large
+        children:
+          - type: Label
+            label: Equidistant
+            children:
+              - type: LayoutBox
+                style: inline
+                children:
+                  - type: CheckBox
+                    name: checkboxequi
+                    label: Number of bins =
+                    style: inline
+                    verticalAlignment: center
+                    children:
+                      - type: TextBox
+                        name: equibins
+                        label: ''
+                        format: number
+                  - type: CheckBox
+                    name: equitable
+                    enable: (checkboxequi)
+              - type: LayoutBox
+                children:
+                  - type: CheckBox
+                    name: propfactorequi
+                    enable: (checkboxequi)
+                    label: Proportionality factor c =
+                    style: inline
+                    verticalAlignment: center
+                    children:
+                      - type: TextBox
+                        name: cequi
+                        label: ''
+                        format: number
+  - type: CollapseBox
+    label: Categories
+    collapsed: false
+    children:
+      - type: VariableSupplier
+        persistentItems: false
+        stretchFactor: 1
+        children:
+          - type: TargetLayoutBox
+            label: Variable
+            children:
+              - type: VariablesListBox
+                name: categvar
+                maxItemCount: 1
+                isTarget: true
+      - type: LayoutBox
+        stretchFactor: 1
+        margin: large
+        children:
+          - type: LayoutBox
+            margin: large
+            children:
+              - type: LayoutBox
+                style: inline
+                children:
+                  - type: CheckBox
+                    name: checkboxcateg
+                    label: Breaks at
+                    style: inline
+                    verticalAlignment: center
+                    children:
+                      - type: TextBox
+                        name: breakValues
+                        label: ''
+                        format: string
+                        width: largest
+                  - type: CheckBox
+                    name: categtable
+                    enable: (checkboxcateg)
+              - type: LayoutBox
+                children:
+                  - type: CheckBox
+                    name: propfactorcateg
+                    enable: (checkboxcateg)
+                    label: Proportionality factor c =
+                    style: inline
+                    verticalAlignment: center
+                    children:
+                      - type: TextBox
+                        name: ccateg
+                        label: ''
+                        format: number

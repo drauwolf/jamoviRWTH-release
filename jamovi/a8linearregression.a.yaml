@@ -1,0 +1,131 @@
+---
+name:  a8linearregression
+title: Regression Analysis (A8)
+menuGroup: Descriptives
+version: '1.0.0'
+jas: '1.2'
+
+options:
+    - name: data
+      type: Data
+
+    - name: var
+      title: Dependent Variable Y
+      type: Variable
+      suggested:
+        - continuous
+      permitted:
+        - numeric
+      rejectInf: false
+      description:
+          ui: >
+            the dependent variables -- a separate t-test is performed for each
+            dependent variable specified.
+          R: >
+            the dependent variables (not necessary when using a formula, see
+            the examples)
+
+    - name: covariate
+      title: Covariate X
+      type: Variable
+      suggested:
+        - continuous
+      permitted:
+        - numeric
+      rejectInf: false
+      description:
+          ui: >
+            the variable specifying the groups; must have 2 levels.
+          R: >
+            the grouping variable with two levels (not necessary when
+            using a formula, see the examples)
+
+    - name: linReg
+      title: Linear Regression (least squares)
+      type: Bool
+      default: false
+      
+    - name: linRegIntercept
+      title: Intercept value
+      type: Bool
+      default: false
+      
+    - name: interceptvalue
+      title: a = 
+      type: Number
+      default: 0
+      
+    - name: bpKor
+      title: Bravais-Pearson correlation coefficient
+      type: Bool
+      default: false
+      
+    - name: B
+      title: Coefficient of determination
+      type: Bool
+      default: false
+      
+    - name: resPlot
+      title: Plot of residuals
+      type: Bool
+      default: false
+      
+    - name: normedresPlot
+      title: normalized
+      type: Bool
+      default: false
+      
+    - name: scatter
+      title: Scatterplot
+      type: Bool
+      default: false
+      
+    - name: regplot
+      title: with linear regression line 
+      type: Bool 
+      default: false
+      
+    - name: regplotquad
+      title: with quadratic regression line 
+      type: Bool 
+      default: false
+    
+    - name: regplotpoly
+      title: with polynomial regression line 
+      type: Bool 
+      default: false
+      
+    - name: degree
+      type: Number
+      min: 1
+      default: 3
+    
+    - name: regplotlog
+      title: with logistic regression line 
+      type: Bool 
+      default: false
+      
+    - name: residsOV
+      title: Residuals
+      type: Output
+      
+    - name: normedresidsOV
+      title: Normalized residuals
+      type: Output
+      
+    - name: predictionsOV
+      title: Predictions
+      type: Output
+      
+    - name: pred
+      title: Predicition of value 
+      type: Bool
+      default: false
+      
+    - name: predvalue
+      title: x =
+      type: Number
+      min: 0
+      default: 1
+      
+...

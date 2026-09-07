@@ -1,0 +1,84 @@
+---
+name:  d7linearregression
+title: Linear Regression (D7)
+jrs:   '1.1'
+
+items:
+    - name:  linreg
+      title: Point estimation for linear regression
+      visible: (linReg || ser || varest)
+      type: Table
+      rows:  0
+      columns:
+        - name: a_hat
+          title: â
+          type: number
+          visible: (linReg)
+        - name: b_hat
+          title:  b̂
+          type: number
+          visible: (linReg)
+        - name: sigmahat
+          title: σ̂ ²
+          type: number
+          visible: (ser)
+        - name: sigmahat_a
+          title: σ̂ₐ²
+          type: number
+          visible: (varest)
+        - name: sigmahat_b
+          title: σ̂ᵦ²
+          type: number
+          visible: (varest)
+
+    - name:  confi
+      title: Confidence intervals
+      visible: (confia || confib || confisigma || confif)
+      type: Table
+      rows:  0
+      columns:
+        - name: parameter
+          title: 'Parameter'
+          type: text
+        - name: conflevel
+          title: '1-α'
+          type: number
+        - name: lower
+          title: 'Lower'
+          type: number
+        - name: upper
+          title: 'Upper'
+          type: number    
+
+    - name: confbandplot
+      title: ''
+      type: Image
+      visible: (confibandf)
+      renderFun: .confbandplot
+      
+    - name:  hyptest
+      title: Hypothesis tests
+      visible: (hyptesta || hyptestb || hyptestsigma)
+      type: Table
+      rows:  0
+      columns:
+        - name: parameter
+          title: 'Parameter'
+          type: text
+        - name: signlevel
+          title: 'α'
+          type: number
+        - name: statistic
+          title: 'Statistic'
+          type: number    
+        - name: c
+          title: 'c'
+          type: number
+        - name: d
+          title: 'd'
+          type: number
+          visible: (hyptestsigma && hyttestsidesigma=='twosigma')
+        - name: decision
+          title: 'Decision rule'
+          type: text 
+...

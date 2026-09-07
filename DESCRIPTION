@@ -1,0 +1,11 @@
+Package: jamoviRWTH
+Type: Package
+Title: jamoviRWTH - Project jamovi.RWTH (2021-2026)
+Version: 2.7.29
+Author: Diana Rauwolf, Christina Empacher
+Maintainer: Diana Rauwolf <rauwolf@isw.rwth-aachem.de>
+Description: The package jamoviRWTH contains measures and analyses from the book "Grundlagen der Wahrscheinlichkeitsrechnung und Statistik" by E. Cramer and U. Kamps (2020). These are specifically developed to be used in elementary statistics courses. The module "Descriptives" contains all analyses for "Descriptive Statistics" corresponding to chapters A1-A9 of the book. The module "Inference" contains all analyses for "Inference Statistics" corresponding to chapters D3-D7 of the book.
+License: GPL (>= 2)
+Encoding: UTF-8
+LazyData: true
+Imports: jmvcore (>= 0.8.5), R6

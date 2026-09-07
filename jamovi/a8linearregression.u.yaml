@@ -1,0 +1,112 @@
+title: Regression Analysis (A8)
+name: a8linearregression
+jus: '3.0'
+stage: 0
+compilerMode: tame
+children:
+  - type: VariableSupplier
+    persistentItems: false
+    stretchFactor: 1
+    children:
+      - type: TargetLayoutBox
+        label: Dependent Variable Y
+        children:
+          - type: VariablesListBox
+            name: var
+            maxItemCount: 1
+            isTarget: true
+      - type: TargetLayoutBox
+        label: Covariate X
+        children:
+          - type: VariablesListBox
+            name: covariate
+            maxItemCount: 1
+            isTarget: true
+  - type: LayoutBox
+    style: inline
+    stretchFactor: 1
+    margin: large
+    children:
+      - type: LayoutBox
+        stretchFactor: 1
+        margin: large
+        children:
+          - type: Label
+            label: Linear Regression
+            children:
+              - type: CheckBox
+                name: linReg
+                children:
+                  - type: CheckBox
+                    name: linRegIntercept
+                    label: with intercept a =
+                    enable: (linReg)
+                    style: inline
+                    children:
+                      - type: TextBox
+                        name: interceptvalue
+                        label: ''
+                        format: number
+              - type: CheckBox
+                name: bpKor
+              - type: CheckBox
+                name: B
+          - type: Label
+            label: Prediction of values
+            margin: large
+            children:
+              - type: LayoutBox
+                children:
+                  - type: CheckBox
+                    name: pred
+                    label: Prediction for x =
+                    style: inline
+                    verticalAlignment: center
+                    children:
+                      - type: TextBox
+                        name: predvalue
+                        label: ''
+                        format: number
+          - type: Label
+            label: Save to Dataset
+            children:
+              - type: Output
+                name: residsOV
+              - type: Output
+                name: normedresidsOV
+              - type: Output
+                name: predictionsOV
+      - type: LayoutBox
+        stretchFactor: 1
+        margin: large
+        children:
+          - type: Label
+            label: Plots
+            children:
+              - type: CheckBox
+                name: scatter
+                children:
+                  - type: CheckBox
+                    name: regplot
+                    enable: (scatter)
+                  - type: CheckBox
+                    name: regplotquad
+                    enable: (scatter)
+                  - type: CheckBox
+                    name: regplotpoly
+                    enable: (scatter)
+                    children:
+                      - type: TextBox
+                        name: degree
+                        label: degree
+                        format: number
+                        enable: (regplotpoly)
+                  - type: CheckBox
+                    name: regplotlog
+                    enable: (scatter)
+              - type: CheckBox
+                name: resPlot
+                children:
+                  - type: CheckBox
+                    name: normedresPlot
+                    enable: (resPlot)

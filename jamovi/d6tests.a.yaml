@@ -1,0 +1,560 @@
+---
+name:  d6tests
+title: Statistical Tests (D6)
+menuGroup: Inference
+version: '1.0.0'
+jas: '1.2'
+
+options:
+    - name: data
+      type: Data
+      
+    - name: varnormalones
+      title: Variable
+      type: Variable
+      permitted:
+        - numeric
+      suggested:
+        - continuous
+
+    - name: normalphaones
+      title: With significance level α =
+      type: Number
+      default: 0.05
+        
+    - name: ztest
+      title: Z-Test for μ
+      type: Bool
+      default: false
+      
+    - name: ztestvalue
+      type: Number
+      default: 1
+      
+    - name: ztestsigma
+      type: Number
+      default: 0.1
+      
+    - name: ztestside
+      title: ' '
+      type: List
+      options:
+        - title: Two-Sided
+          name:  twoztest
+        - title: One-Sided lower
+          name:  lowerztest
+        - title: One-Sided upper
+          name:  upperztest
+      default: twoztest
+
+    - name: ztestpower
+      title: Power function of the Z-Test
+      type: Bool
+      default: false
+      
+    - name: ztestpowervalue
+      type: Number
+      default: 1
+      
+    - name: ztesttypeIerror
+      title: Type I error
+      type: Bool
+      default: false
+      
+    - name: ztesttypeIerrorvalue
+      type: Number
+      default: 1
+
+    - name: ztesttypeIIerror
+      title: Type II error
+      type: Bool
+      default: false
+      
+    - name: ztesttypeIIerrorvalue
+      type: Number
+      default: 1
+
+    - name: ztestexpdesign
+      title: Experimental design with
+      type: Bool
+      default: false
+
+    - name: ztestexpdesignbeta
+      type: Number
+      default: 0.5
+      
+    - name: ztestexpdesigndelta
+      type: Number
+      default: 1      
+
+    - name: ttest
+      title: t-Test for μ
+      type: Bool
+      default: false
+      
+    - name: ttestvalue
+      type: Number
+      default: 1
+      
+    - name: ttestside
+      title: ' '
+      type: List
+      options:
+        - title: Two-Sided
+          name:  twottest
+        - title: One-Sided lower
+          name:  lowerttest
+        - title: One-Sided upper
+          name:  upperttest
+      default: twottest
+
+    - name: chitestknownmu
+      title: χ²-Test for σ
+      type: Bool
+      default: false
+      
+    - name: chitestvalueknownmu
+      type: Number
+      default: 1
+      
+    - name: chitestmu
+      type: Number
+      default: 2
+      
+    - name: chitestsideknownmu
+      title: ' '
+      type: List
+      options:
+        - title: Two-Sided
+          name:  twochitestknownmu
+        - title: One-Sided lower
+          name:  lowerchitestknownmu
+        - title: One-Sided upper
+          name:  upperchitestknownmu
+      default: twochitestknownmu
+
+    - name: chitest
+      title: χ²-Test for σ
+      type: Bool
+      default: false
+      
+    - name: chitestvalue
+      type: Number
+      default: 1
+      
+    - name: chitestside
+      title: ' '
+      type: List
+      options:
+        - title: Two-Sided
+          name:  twochitest
+        - title: One-Sided lower
+          name:  lowerchitest
+        - title: One-Sided upper
+          name:  upperchitest
+      default: twochitest
+      
+    - name: varnormalpaired1
+      title: Variable
+      type: Variable
+      permitted:
+        - numeric
+      suggested:
+        - continuous
+      
+    - name: varnormalpaired2
+      title: Variable
+      type: Variable
+      permitted:
+        - numeric
+      suggested:
+        - continuous
+
+    - name: normalphapaired
+      title: With significance level α =
+      type: Number
+      default: 0.05
+
+    - name: ztestpaired
+      title: Z-Test 
+      type: Bool
+      default: false
+      
+    - name: ztestpairedvalue
+      type: Number
+      default: 1
+      
+    - name: ztestpairedsigma1
+      type: Number
+      default: 1
+      
+    - name: ztestpairedsigma2
+      type: Number
+      default: 1
+      
+    - name: ztestpairedrho
+      type: Number
+      default: 0.1
+      
+    - name: ztestpairedside
+      title: ' '
+      type: List
+      options:
+        - title: Two-Sided
+          name:  twoztestpaired
+        - title: One-Sided lower
+          name:  lowerztestpaired
+        - title: One-Sided upper
+          name:  upperztestpaired
+      default: twoztestpaired
+
+    - name: ttestpaired
+      title: t-Test 
+      type: Bool
+      default: false
+      
+    - name: ttestpairedvalue
+      type: Number
+      default: 1
+      
+    - name: ttestpairedside
+      title: ' '
+      type: List
+      options:
+        - title: Two-Sided
+          name:  twottestpaired
+        - title: One-Sided lower
+          name:  lowerttestpaired
+        - title: One-Sided upper
+          name:  upperttestpaired
+      default: twottestpaired
+
+    - name: indeptestpaired
+      title: Test for independence
+      type: Bool
+      default: false
+      
+    - name: indeptestpairedside
+      title: ' '
+      type: List
+      options:
+        - title: Two-Sided
+          name:  twoindeptestpaired
+        - title: One-Sided lower
+          name:  lowerindeptestpaired
+        - title: One-Sided upper
+          name:  upperindeptestpaired
+      default: twoindeptestpaired
+
+    - name: varnormalindep
+      title: Variable
+      type: Variable
+      permitted:
+        - numeric
+      suggested:
+        - continuous
+      
+    - name: splitnormal
+      title: Split by
+      type: Variable
+      permitted:
+        - factor
+      suggested: 
+        - nominal
+        - ordinal
+
+    - name: normalphaindep
+      title: With significance level α =
+      type: Number
+      default: 0.05
+
+    - name: ftest
+      title: F-Test for two variances
+      type: Bool
+      default: false
+      
+    - name: ftestside
+      title: ' '
+      type: List
+      options:
+        - title: Two-Sided
+          name:  twoftest
+        - title: One-Sided lower
+          name:  lowerftest
+        - title: One-Sided upper
+          name:  upperftest
+      default: twoftest
+
+    - name: ztestindep
+      title: Z-Test for two means
+      type: Bool
+      default: false
+      
+    - name: ztestindepsigma
+      type: Number
+      default: 0.1
+      
+    - name: ztestindepside
+      title: ' '
+      type: List
+      options:
+        - title: Two-Sided
+          name:  twoztestindep
+        - title: One-Sided lower
+          name:  lowerztestindep
+        - title: One-Sided upper
+          name:  upperztestindep
+      default: twoztestindep
+
+    - name: ttestindep
+      title: t-Test for two means
+      type: Bool
+      default: false
+      
+    - name: ttestindepside
+      title: ' '
+      type: List
+      options:
+        - title: Two-Sided
+          name:  twottestindep
+        - title: One-Sided lower
+          name:  lowerttestindep
+        - title: One-Sided upper
+          name:  upperttestindep
+      default: twottestindep
+
+    - name: varbinones
+      title: Variable
+      type: Variable
+      permitted:
+        - numeric
+      suggested:
+        - continuous
+        
+    - name: binalphaones
+      title: With significance level α =
+      type: Number
+      default: 0.05
+
+    - name: exactbintest
+      title: Exact binomial test
+      type: Bool
+      default: false
+      
+    - name: exactbintestvalue
+      type: Number
+      default: 0.5
+      
+    - name: exactbintestside
+      title: ' '
+      type: List
+      options:
+        - title: Two-Sided
+          name:  twoexactbintest
+        - title: One-Sided lower
+          name:  lowerexactbintest
+        - title: One-Sided upper
+          name:  upperexactbintest
+      default: twoexactbintest
+
+    - name: exactbintestpower
+      title: Power function of the exact binomial test
+      type: Bool
+      default: false
+      
+    - name: exactbintestpowervalue
+      type: Number
+      default: 0.5
+      
+    - name: exactbintesttypeIerror
+      title: Type I error
+      type: Bool
+      default: false
+      
+    - name: exactbintesttypeIerrorvalue
+      type: Number
+      default: 0.1
+
+    - name: exactbintesttypeIIerror
+      title: Type II error
+      type: Bool
+      default: false
+
+    - name: exactbintesttypeIIerrorvalue
+      type: Number
+      default: 0.1
+
+    - name: approxbintest
+      title: Approx. binomial test
+      type: Bool
+      default: false
+      
+    - name: approxbintestvalue
+      type: Number
+      default: 0.5
+      
+    - name: approxbintestside
+      title: ' '
+      type: List
+      options:
+        - title: Two-Sided
+          name:  twoapproxbintest
+        - title: One-Sided lower
+          name:  lowerapproxbintest
+        - title: One-Sided upper
+          name:  upperapproxbintest
+      default: twoapproxbintest
+
+    - name: varbintwos
+      title: Variable
+      type: Variable
+      permitted:
+        - numeric
+      suggested:
+        - continuous
+      
+    - name: splitbin
+      title: Split by
+      type: Variable
+      permitted:
+        - factor
+      suggested: 
+        - nominal
+        - ordinal
+
+    - name: binalphaindep
+      title: With significance level α =
+      type: Number
+      default: 0.05
+
+    - name: twosamplesbintest
+      title: Approximative two samples binomial test
+      type: Bool
+      default: false
+      
+    - name: twosamplesbintestside
+      title: ' '
+      type: List
+      options:
+        - title: Two-Sided
+          name:  twotwosamplesbintest
+        - title: One-Sided lower
+          name:  lowertwosamplesbintest
+        - title: One-Sided upper
+          name:  uppertwosamplesbintest
+      default: twotwosamplesbintest
+      
+    - name: varnonparamones
+      title: Variable
+      type: Variable
+      permitted:
+        - numeric
+      suggested:
+        - continuous
+
+    - name: nonparamalphaones
+      title: With significance level α =
+      type: Number
+      default: 0.05
+      
+    - name: signtest
+      title: Sign test
+      type: Bool
+      default: false
+      
+    - name: signtestvalue
+      type: Number
+      default: 0
+      
+    - name: signtestside
+      title: ' '
+      type: List
+      options:
+        - title: Two-Sided
+          name:  twosigntest
+        - title: One-Sided lower
+          name:  lowersigntest
+        - title: One-Sided upper
+          name:  uppersigntest
+      default: twosigntest
+
+    - name: varnonparamtwos
+      title: Variable
+      type: Variable
+      permitted:
+        - numeric
+      suggested:
+        - continuous
+        
+    - name: splitnonparam
+      title: Split by
+      type: Variable
+      permitted:
+        - factor
+      suggested: 
+        - nominal
+        - ordinal
+
+    - name: nonparamalphatwos
+      title: With significance level α =
+      type: Number
+      default: 0.05
+
+    - name: utest
+      title: Mann-Whitney U-test
+      type: Bool
+      default: false
+
+    - name: utestside
+      title: ' '
+      type: List
+      options:
+        - title: Two-Sided
+          name:  twoutest
+        - title: One-Sided lower
+          name:  lowerutest
+        - title: One-Sided upper
+          name:  upperutest
+      default: twoutest
+
+    - name: nominal1
+      title: Rows
+      type: Variable
+      permitted:
+        - factor
+        - id
+      suggested:
+        - nominal
+
+    - name: nominal2
+      title: Columns
+      type: Variable
+      permitted:
+        - factor
+        - id
+      suggested:
+        - nominal
+
+    - name: counts
+      title: Counts in Contingency Table
+      type: Variable
+      suggested:
+        - continuous
+      permitted:
+        - numeric
+
+    - name: contabs
+      title: Contingency table with absolute frequencies
+      type: Bool
+      default: false
+      
+    - name: conttest
+      title: χ² test for independence
+      type: Bool
+      default: false
+      
+    - name: conttestalpha
+      title: with significance level α =
+      type: Number
+      default: 0.05
+...

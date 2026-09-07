@@ -1,0 +1,101 @@
+---
+name:  d3maximumlikelihood
+title: Maximum Likelihood Estimation (D3/D5)
+menuGroup: Inference
+version: '1.0.0'
+jas: '1.2'
+
+options:
+    - name: data
+      type: Data
+      
+    - name: var
+      title: Variable
+      type: Variable
+      permitted:
+        - numeric
+      suggested:
+        - continuous
+
+    - name: bindistr
+      title: Binomial
+      type: Bool
+      default: false
+      
+    - name: geodistr
+      title: Geometric
+      type: Bool
+      default: false
+      
+    - name: podistr
+      title: Poisson
+      type: Bool
+      default: false
+      
+    - name: Ndistr
+      title: Normal
+      type: Bool
+      default: false
+      
+    - name: expdistr
+      title: Exponential
+      type: Bool
+      default: false
+      
+    - name: Udistr
+      title: Uniform
+      type: Bool
+      default: false
+      
+    - name: pardistr
+      title: Pareto
+      type: Bool
+      default: false
+      
+    - name: powdistr
+      title: Power
+      type: Bool
+      default: false
+      
+    - name: variance
+      title: known σ²
+      type: Bool
+      default: FALSE
+      
+    - name: mean
+      title: known μ =  
+      type: Bool
+      default: FALSE
+      
+    - name: mu
+      type: Number
+      default: 0
+      
+    - name: expparameter
+      title: ''
+      type: List
+      options:
+        - title: for inverse scale parameter λ
+          name: lambda
+        - title: for scale parameter β, where β=1/λ
+          name: oneoverlambda
+
+    - name: unifa
+      title: known a =
+      type: Bool
+      default: FALSE
+      
+    - name: a
+      type: Number
+      default: 0
+      
+    - name: unifb
+      title: known b =  
+      type: Bool
+      default: FALSE
+      
+    - name: b
+      type: Number
+      default: 1
+
+...

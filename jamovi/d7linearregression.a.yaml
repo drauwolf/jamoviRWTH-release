@@ -1,0 +1,233 @@
+---
+name:  d7linearregression
+title: Linear Regression (D7)
+menuGroup: Inference
+version: '1.0.0'
+jas: '1.2'
+
+options:
+    - name: data
+      type: Data
+
+    - name: yvariable
+      title: Dependent Variable Y
+      type: Variable
+      suggested:
+        - continuous
+      permitted:
+        - numeric
+      rejectInf: false
+      description:
+          ui: >
+            the dependent variables -- a separate t-test is performed for each
+            dependent variable specified.
+          R: >
+            the dependent variables (not necessary when using a formula, see
+            the examples)
+
+    - name: xvariable
+      title: Covariate X
+      type: Variable
+      suggested:
+        - continuous
+      permitted:
+        - numeric
+      rejectInf: false
+      description:
+          ui: >
+            the variable specifying the groups; must have 2 levels.
+          R: >
+            the grouping variable with two levels (not necessary when
+            using a formula, see the examples)
+
+    - name: linReg
+      title: Least squares estimators
+      type: Bool
+      default: false
+
+    - name: ser
+      title: Standard error of regression
+      type: Bool
+      default: false
+      
+    - name: varest
+      title: Variances of least squares estimators
+      type: Bool
+      default: false
+      
+    - name: confia
+      title: For a
+      type: Bool
+      default: false
+      
+    - name: confsidea
+      title: Side
+      type: List
+      options:
+        - title: Two-Sided
+          name:  twoconfa
+        - title: One-Sided lower
+          name:  lowerconfa
+        - title: One-Sided upper
+          name:  upperconfa
+      default: twoconfa
+      
+    - name: confiaknownsigma
+      title: with known σ²=
+      type: Bool
+      default: false
+      
+    - name: confiaknownsigmavalue
+      type: Number
+      default: 1
+
+    - name: confib
+      title: For b
+      type: Bool
+      default: false
+      
+    - name: confsideb
+      title: Side
+      type: List
+      options:
+        - title: Two-Sided
+          name:  twoconfb
+        - title: One-Sided lower
+          name:  lowerconfb
+        - title: One-Sided upper
+          name:  upperconfb
+      default: twoconfb
+      
+    - name: confibknownsigma
+      title: with known σ²=
+      type: Bool
+      default: false
+      
+    - name: confibknownsigmavalue
+      type: Number
+      default: 1
+      
+    - name: confisigma
+      title: For σ²
+      type: Bool
+      default: false
+
+    - name: confsidesigma
+      title: Side
+      type: List
+      options:
+        - title: Two-Sided
+          name:  twoconfsigma
+        - title: One-Sided lower
+          name:  lowerconfsigma
+        - title: One-Sided upper
+          name:  upperconfsigma
+      default: twoconfsigma
+      
+    - name: confif
+      title: For the regression function (two-sided)
+      type: Bool
+      default: false
+      
+    - name: confifvalue
+      title: x =
+      type: Number
+      default: 1
+      
+    - name: confalpha
+      title: with confidence level
+      type: Number
+      default: 0.95
+      
+    - name: confibandf
+      title: Confidence band for the whole regression function 
+      type: Bool
+      default: false
+      
+    - name: hypalpha
+      title: with confidence level
+      type: Number
+      default: 0.05
+      
+    - name: hyptesta
+      title: For a
+      type: Bool
+      default: false
+      
+    - name: testvaluea
+      type: Number
+      default: 1
+      
+    - name: hyttestsidea
+      title: ' '
+      type: List
+      options:
+        - title: Two-Sided
+          name:  twoa
+        - title: One-Sided lower
+          name:  lowera
+        - title: One-Sided upper
+          name:  uppera
+      default: twoa
+      
+    - name: hyptestaknownsigma
+      title: with known σ²=
+      type: Bool
+      default: false
+      
+    - name: hyptestaknownsigmavalue
+      type: Number
+      default: 1
+      
+    - name: hyptestb
+      title: For b
+      type: Bool
+      default: false
+      
+    - name: testvalueb
+      type: Number
+      default: 1
+      
+    - name: hyttestsideb
+      title: ' '
+      type: List
+      options:
+        - title: Two-Sided
+          name:  twob
+        - title: One-Sided lower
+          name:  lowerb
+        - title: One-Sided upper
+          name:  upperb
+      default: twob
+
+    - name: hyptestbknownsigma
+      title: with known σ²=
+      type: Bool
+      default: false
+      
+    - name: hyptestbknownsigmavalue
+      type: Number
+      default: 1
+      
+    - name: hyptestsigma
+      title: For σ²
+      type: Bool
+      default: false
+      
+    - name: testvaluesigma
+      type: Number
+      default: 1
+      
+    - name: hyttestsidesigma
+      title: ' '
+      type: List
+      options:
+        - title: Two-Sided
+          name:  twosigma
+        - title: One-Sided lower
+          name:  lowersigma
+        - title: One-Sided upper
+          name:  uppersigma
+      default: twosigma
+
+...

@@ -1,0 +1,41 @@
+---
+name:  a5concentrationmeasures
+title: Measures of Concentration (A5)
+jrs:   '1.1'
+
+items:
+    - name: Tabdata
+      title: Data
+      visible: (Tab & !is.null(var))
+      type: Table
+      description: a table of data
+      columns: [ ]
+      
+    - name: Lor
+      title: 'Lorenz curve'
+      type: Image
+      visible: (Lorenz & !is.null(var))
+      renderFun: .plot
+      
+    - name: coeff
+      title: 'Measures of concentration'
+      visible: (Gini || norm || Herf)
+      type: Table
+      rows: 0
+      columns:
+        - name: Group
+          type: text
+          visible: (group)
+        - name: Gini
+          title: Gini's ratio
+          type: number
+          visible: (Gini)
+        - name: normalized
+          title: normalized Gini's ratio
+          type: number
+          visible: (norm)
+        - name: Herfin
+          title: Herfindahl index
+          type: number
+          visible: (Herf)
+...

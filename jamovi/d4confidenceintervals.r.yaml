@@ -1,0 +1,77 @@
+---
+name:  d4confidenceintervals
+title: Confidence Intervals (D4/D5)
+jrs:   '1.1'
+
+items:
+    - name:  CIexp
+      title: Confidence interval for exponential distribution
+      visible: (lambda && !is.null(varexp) || beta && !is.null(varexp))
+      type: Table
+      columns:
+        - name: Parameter
+          type: text
+        - name: Level
+          title: α
+          type: number
+        - name: Lower
+          type: number
+        - name: Upper
+          type: number
+
+    - name:  CIbin
+      title: Confidence interval for binomial distribution
+      visible: (exact && !is.null(varbinom) || approx && !is.null(varbinom))
+      type: Table
+      columns:
+        - name: Parameter
+          type: text
+        - name: Level
+          title: α
+          type: number
+        - name: Lower
+          type: number
+        - name: Upper
+          type: number
+        - name: Type
+          type: text
+
+    - name:  CInorm
+      title: Confidence intervals for normal distribution
+      visible: (muknownvar && !is.null(varnorm) || muunknownvar && !is.null(varnorm) || sigmaknownmu && !is.null(varnorm) || sigmaunknownmu && !is.null(varnorm))
+      type: Table
+      columns:
+        - name: Parameter
+          type: text
+        - name: Level
+          title: α
+          type: number
+        - name: Lower
+          type: number
+        - name: Upper
+          type: number
+        - name: n
+          title: 'n ≥'
+          type: number
+          visible: (n && muknownvar)
+        - name: Type
+          type: text
+          
+
+    - name:  CInormtwosample
+      title: Confidence interval for two independent samples from a normal distribution 
+      visible: (diff && !is.null(varnormtwosample) && !is.null(split))
+      type: Table
+      columns:
+        - name: Parameter
+          type: text
+        - name: Level
+          title: α
+          type: number
+        - name: Lower
+          type: number
+        - name: Upper
+          type: number
+        - name: Type
+          type: text
+...

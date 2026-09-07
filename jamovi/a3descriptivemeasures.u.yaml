@@ -1,0 +1,172 @@
+title: Measures of Central Tendency and Dispersion (A3)
+name: a3descriptivemeasures
+jus: '3.0'
+stage: 0
+compilerMode: tame
+children:
+  - type: CollapseBox
+    label: Order statistics
+    collapsed: true
+    children:
+      - type: VariableSupplier
+        persistentItems: false
+        stretchFactor: 1
+        children:
+          - type: TargetLayoutBox
+            label: Variable
+            children:
+              - type: VariablesListBox
+                name: varrank
+                maxItemCount: 1
+                isTarget: true
+      - type: LayoutBox
+        style: inline
+        stretchFactor: 1
+        margin: large
+        children:
+          - type: LayoutBox
+            stretchFactor: 1
+            margin: large
+            children:
+              - type: Label
+                label: Save
+                children:
+                  - type: Output
+                    name: order
+                  - type: Output
+                    name: rank
+  - type: CollapseBox
+    label: Measures
+    collapsed: false
+    children:
+      - type: VariableSupplier
+        persistentItems: false
+        stretchFactor: 1
+        children:
+          - type: TargetLayoutBox
+            label: Variables
+            children:
+              - type: VariablesListBox
+                name: vars
+                isTarget: true
+          - type: TargetLayoutBox
+            label: Split by
+            children:
+              - type: VariablesListBox
+                name: group
+                maxItemCount: 1
+                isTarget: true
+          - type: TargetLayoutBox
+            label: Weights
+            children:
+              - type: VariablesListBox
+                name: Gew
+                maxItemCount: 1
+                isTarget: true
+      - type: LayoutBox
+        style: inline
+        stretchFactor: 1
+        children:
+          - type: LayoutBox
+            stretchFactor: 1
+            margin: large
+            children:
+              - type: Label
+                label: Measures of Central Tendency
+                children:
+                  - type: CheckBox
+                    name: min
+                  - type: CheckBox
+                    name: uQuart
+                  - type: CheckBox
+                    name: mod
+                  - type: CheckBox
+                    name: med
+                  - type: CheckBox
+                    name: mean
+                    children:
+                      - type: CheckBox
+                        name: wmean
+                        enable: (mean)
+                  - type: CheckBox
+                    name: geomean
+                    children:
+                      - type: CheckBox
+                        name: wgeomean
+                        enable: (geomean)
+                  - type: CheckBox
+                    name: harmmean
+                    children:
+                      - type: CheckBox
+                        name: wharmmean
+                        enable: (harmmean)
+                  - type: CheckBox
+                    name: oQuart
+                  - type: CheckBox
+                    name: max
+                  - type: LayoutBox
+                    children:
+                      - type: CheckBox
+                        name: quant
+                        label: Empirical
+                        style: inline
+                        verticalAlignment: center
+                        children:
+                          - type: TextBox
+                            name: pquant
+                            label: ''
+                            format: string
+                            width: large
+                            suffix: '%-quantile'
+    
+          - type: LayoutBox
+            stretchFactor: 1
+            margin: large
+            children:
+              - type: Label
+                label: Measures of Dispersion
+                children:
+                  - type: CheckBox
+                    name: range
+                  - type: CheckBox
+                    name: QAbst
+                  - type: CheckBox
+                    name: varianz
+                  - type: CheckBox
+                    name: stAbw
+                  - type: CheckBox
+                    name: absAbw
+                  - type: CheckBox
+                    name: varkoeff
+              - type: Label
+                label: Plot
+                children:
+                  - type: CheckBox
+                    name: box
+                    children:
+                      - type: Label
+                        label: Type
+                        children:
+                          - type: RadioButton
+                            name: Base
+                            optionName: variante
+                            optionPart: base
+                            enable: (box)
+                          - type: RadioButton
+                            name: Modified
+                            optionName: variante
+                            optionPart: modified
+                            enable: (box)
+                      - type: Label
+                        label: Orientation
+                        children:
+                          - type: RadioButton
+                            name: Horizontal
+                            optionName: Richtung
+                            optionPart: horizontal
+                            enable: (box)
+                          - type: RadioButton
+                            name: Vertical
+                            optionName: Richtung
+                            optionPart: vertical
+                            enable: (box)

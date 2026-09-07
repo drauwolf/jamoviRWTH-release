@@ -1,0 +1,95 @@
+title: Tables and Graphs (A2)
+name: a2tablesgraphs
+jus: '3.0'
+stage: 0
+compilerMode: tame
+children:
+  - type: VariableSupplier
+    persistentItems: false
+    stretchFactor: 1
+    children:
+      - type: TargetLayoutBox
+        label: Dependent Variables
+        children:
+          - type: VariablesListBox
+            name: vars
+            isTarget: true
+  - type: LayoutBox
+    style: inline
+    stretchFactor: 1
+    margin: large
+    children:
+      - type: LayoutBox
+        stretchFactor: 1
+        margin: large
+        children:
+          - type: Label
+            label: Frequency Distribution
+            children:
+              - type: CheckBox
+                name: absH
+                children:
+                  - type: CheckBox
+                    name: cumH
+                    enable: (absH)
+      - type: LayoutBox
+        stretchFactor: 1
+        margin: large
+        children:
+          - type: Label
+            label: Plots
+            children:
+              - type: CheckBox
+                name: stick
+                children:
+                  - type: CheckBox
+                    name: stickrel
+                    enable: (stick)
+              - type: CheckBox
+                name: vbar
+                children:
+                  - type: CheckBox
+                    name: vbarrel
+                    enable: (vbar)
+              - type: CheckBox
+                name: hbar
+                children:
+                  - type: CheckBox
+                    name: hbarrel
+                    enable: (hbar)
+              - type: CheckBox
+                name: pie
+              - type: CheckBox
+                name: line
+                children:
+                  - type: CheckBox
+                    name: linerel
+                    enable: (line)
+  - type: CollapseBox
+    label: Empirical CDF
+    collapsed: false
+    children:
+      - type: VariableSupplier
+        persistentItems: false
+        stretchFactor: 1
+        children:
+          - type: TargetLayoutBox
+            label: Variables
+            children:
+              - type: VariablesListBox
+                name: ecdf
+                isTarget: true
+      - type: LayoutBox
+        style: inline
+        stretchFactor: 1
+        margin: large
+        children:
+          - type: LayoutBox
+            stretchFactor: 1
+            margin: large
+            children:
+              - type: Label
+                label: Empirical distribution function
+                children:
+                  - type: CheckBox
+                    name: empV

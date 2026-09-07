@@ -1,0 +1,61 @@
+title: Measures of Concentration (A5)
+name: a5concentrationmeasures
+jus: '3.0'
+stage: 0
+compilerMode: tame
+children:
+  - type: VariableSupplier
+    persistentItems: false
+    stretchFactor: 1
+    children:
+      - type: TargetLayoutBox
+        label: Variable
+        children:
+          - type: VariablesListBox
+            name: var
+            maxItemCount: 1
+            isTarget: true
+      - type: TargetLayoutBox
+        label: Split by
+        children:
+          - type: VariablesListBox
+            name: group
+            maxItemCount: 1
+            isTarget: true
+      - type: TargetLayoutBox
+        label: plot by
+        children:
+          - type: VariablesListBox
+            name: plotby
+            maxItemCount: 1
+            isTarget: true
+  - type: LayoutBox
+    style: inline
+    stretchFactor: 1
+    margin: large
+    children:
+      - type: LayoutBox
+        stretchFactor: 1
+        margin: large
+        children:
+          - type: Label
+            label: Table and Plot
+            children:
+            - type: CheckBox
+              name: Tab
+            - type: CheckBox
+              name: Lorenz
+      - type: LayoutBox
+        stretchFactor: 1
+        margin: large
+        children:
+          - type: Label
+            label: Measures of Concentration
+            children:
+              - type: CheckBox
+                name: Gini
+                children:
+                  - type: CheckBox
+                    name: norm
+              - type: CheckBox
+                name: Herf

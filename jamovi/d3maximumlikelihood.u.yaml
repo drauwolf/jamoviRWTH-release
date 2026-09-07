@@ -1,0 +1,89 @@
+title: Maximum Likelihood Estimation (D3/D5)
+name: d3maximumlikelihood
+jus: '3.0'
+stage: 0
+compilerMode: tame
+children:
+  - type: VariableSupplier
+    persistentItems: false
+    stretchFactor: 1
+    children:
+      - type: TargetLayoutBox
+        label: Variable
+        children:
+          - type: VariablesListBox
+            name: var
+            maxItemCount: 1
+            isTarget: true
+  - type: LayoutBox
+    stretchFactor: 1
+    margin: large
+    children:
+      - type: Label
+        label: Distribution
+        children:
+          - type: CheckBox
+            name: bindistr
+            label: Binomial
+          - type: CheckBox
+            name: geodistr
+            label: Geometric
+          - type: CheckBox
+            name: podistr
+            label: Poisson
+          - type: CheckBox
+            name: Ndistr
+            label: Normal
+            children:
+              - type: CheckBox
+                name: variance
+                enable: (Ndistr)
+              - type: CheckBox
+                name: mean
+                enable: (Ndistr)
+                style: inline
+                verticalAlignment: center
+                children:
+                  - type: TextBox
+                    name: mu
+                    format: number
+                    enable: (mean)
+          - type: CheckBox
+            name: expdistr
+            label: Exponential
+            style: inline
+            verticalAlignment: center
+            children:
+              - type: ComboBox
+                name: expparameter
+          - type: CheckBox
+            name: Udistr
+            label: Uniform on [a,b]
+            children: 
+              - type: CheckBox
+                name: unifa
+                enable: (Udistr)
+                style: inline
+                verticalAlignment: center
+                children:
+                  - type: TextBox
+                    name: a
+                    format: number
+                    enable: (unifa)
+              - type: CheckBox
+                name: unifb
+                enable: (Udistr)
+                style: inline
+                verticalAlignment: center
+                children:
+                  - type: TextBox
+                    name: b
+                    format: number
+                    enable: (unifb)
+          - type: CheckBox
+            name: pardistr
+            label: Pareto
+          - type: CheckBox
+            name: powdistr
+            label: Power
+

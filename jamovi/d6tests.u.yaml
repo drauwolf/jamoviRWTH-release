@@ -1,0 +1,897 @@
+title: Statistical Tests (D6)
+name: d6tests
+jus: '3.0'
+stage: 0
+compilerMode: tame
+children:
+  - type: CollapseBox
+    label: Normal distribution - One Sample
+    collapsed: true
+    children:
+      - type: VariableSupplier
+        persistentItems: false
+        stretchFactor: 1
+        children:
+          - type: TargetLayoutBox
+            label: Variable
+            children:
+              - type: VariablesListBox
+                name: varnormalones
+                maxItemCount: 1
+                isTarget: true
+      - type: LayoutBox
+        margin: large
+        children:
+          - type: TextBox
+            name: normalphaones
+            format: number
+      - type: LayoutBox
+        style: inline
+        stretchFactor: 1
+        margin: large
+        children:
+          - type: LayoutBox
+            stretchFactor: 1
+            margin: large
+            children:
+              - type: CheckBox
+                name: ztest
+                style: inline
+                verticalAlignment: center
+                children:
+                  - type: TextBox
+                    name: ztestvalue
+                    label: 'at test value μ₀ = '
+                    format: number
+                    enable: (ztest)
+          - type: LayoutBox
+            stretchFactor: 1
+            margin: large
+            children:
+              - type: TextBox
+                name: ztestsigma
+                label: 'for known σ² = '
+                format: number
+                enable: (ztest)
+              - type: RadioButton
+                name: Twoztest
+                optionName: ztestside
+                optionPart: twoztest
+                label: 'H₀: μ = μ₀ ↔ H₁: μ ≠ μ₀ '
+                enable: (ztest)
+              - type: RadioButton
+                name: Lowerztest
+                optionName: ztestside
+                optionPart: lowerztest
+                label: 'H₀: μ ≥ μ₀ ↔ H₁: μ < μ₀ '
+                enable: (ztest)
+              - type: RadioButton
+                name: Upperztest
+                optionName: ztestside
+                optionPart: upperztest
+                label: 'H₀: μ ≤ μ₀ ↔ H₁: μ > μ₀ '
+                enable: (ztest)
+              - type: CheckBox
+                name: ztestpower
+                enable: (ztest)
+                children:
+                  - type: TextBox
+                    name: ztestpowervalue
+                    label: 'at value μ = '
+                    format: number
+                    enable: (ztest)
+              - type: CheckBox
+                name: ztesttypeIerror
+                style: inline
+                verticalAlignment: center
+                enable: (ztest)
+                children:
+                  - type: TextBox
+                    name: ztesttypeIerrorvalue
+                    label: ' at value μ = '
+                    format: number
+                    enable: (ztest)
+              - type: CheckBox
+                name: ztesttypeIIerror
+                style: inline
+                verticalAlignment: center
+                enable: (ztest)
+                children:
+                  - type: TextBox
+                    name: ztesttypeIIerrorvalue
+                    label: 'at value μ = '
+                    format: number
+                    enable: (ztest)
+              - type: CheckBox
+                name: ztestexpdesign
+                enable: (ztest)
+                children:
+                  - type: TextBox
+                    name: ztestexpdesignbeta
+                    label: 'given probability β* = '
+                    format: number
+                    enable: (ztest)
+                  - type: TextBox
+                    name: ztestexpdesigndelta
+                    label: 'minimal distance δ₀ = '
+                    format: number
+                    enable: (ztest)
+      - type: LayoutBox
+        style: inline
+        stretchFactor: 1
+        margin: large
+        children:
+          - type: LayoutBox
+            stretchFactor: 1
+            margin: large
+            children:
+              - type: CheckBox
+                name: ttest
+                style: inline
+                verticalAlignment: center
+                children:
+                  - type: TextBox
+                    name: ttestvalue
+                    label: 'at test value μ₀ = '
+                    format: number
+                    enable: (ttest)
+          - type: LayoutBox
+            stretchFactor: 1
+            margin: large
+            children:
+              - type: RadioButton
+                name: Twottest
+                optionName: ttestside
+                optionPart: twottest
+                label: 'H₀: μ = μ₀ ↔ H₁: μ ≠ μ₀ '
+                enable: (ttest)
+              - type: RadioButton
+                name: Lowerttest
+                optionName: ttestside
+                optionPart: lowerttest
+                label: 'H₀: μ ≥ μ₀ ↔ H₁: μ < μ₀ '
+                enable: (ttest)
+              - type: RadioButton
+                name: Upperttest
+                optionName: ttestside
+                optionPart: upperttest
+                label: 'H₀: μ ≤ μ₀ ↔ H₁: μ > μ₀ '
+                enable: (ttest)
+      - type: LayoutBox
+        style: inline
+        stretchFactor: 1
+        margin: large
+        children:
+          - type: LayoutBox
+            stretchFactor: 1
+            margin: large
+            children:
+              - type: CheckBox
+                name: chitestknownmu
+                style: inline
+                verticalAlignment: center
+                children:
+                  - type: TextBox
+                    name: chitestvalueknownmu
+                    label: 'at test value σ₀ = '
+                    format: number
+                    enable: (chitestknownmu)
+          - type: LayoutBox
+            stretchFactor: 1
+            margin: large
+            children:
+              - type: TextBox
+                name: chitestmu
+                label: 'for known μ = '
+                format: number
+                enable: (chitestknownmu)
+              - type: RadioButton
+                name: Twochitestknownmu
+                optionName: chitestsideknownmu
+                optionPart: twochitestknownmu
+                label: 'H₀: σ = σ₀ ↔ H₁: σ ≠ σ₀ '
+                enable: (chitestknownmu)
+              - type: RadioButton
+                name: Lowerchitestknownmu
+                optionName: chitestsideknownmu
+                optionPart: lowerchitestknownmu
+                label: 'H₀: σ ≥ σ₀ ↔ H₁: σ < σ₀ '
+                enable: (chitestknownmu)
+              - type: RadioButton
+                name: Upperchitestknownmu
+                optionName: chitestsideknownmu
+                optionPart: upperchitestknownmu
+                label: 'H₀: σ ≤ σ₀ ↔ H₁: σ > σ₀ '
+                enable: (chitestknownmu)
+      - type: LayoutBox
+        style: inline
+        stretchFactor: 1
+        margin: large
+        children:
+          - type: LayoutBox
+            stretchFactor: 1
+            margin: large
+            children:
+              - type: CheckBox
+                name: chitest
+                style: inline
+                verticalAlignment: center
+                children:
+                  - type: TextBox
+                    name: chitestvalue
+                    label: 'at test value σ₀ = '
+                    format: number
+                    enable: (chitest)
+          - type: LayoutBox
+            stretchFactor: 1
+            margin: large
+            children:
+              - type: RadioButton
+                name: Twochitest
+                optionName: chitestside
+                optionPart: twochitest
+                label: 'H₀: σ = σ₀ ↔ H₁: σ ≠ σ₀ '
+                enable: (chitest)
+              - type: RadioButton
+                name: Lowerchitest
+                optionName: chitestside
+                optionPart: lowerchitest
+                label: 'H₀: σ ≥ σ₀ ↔ H₁: σ < σ₀ '
+                enable: (chitest)
+              - type: RadioButton
+                name: Upperchitest
+                optionName: chitestside
+                optionPart: upperchitest
+                label: 'H₀: σ ≤ σ₀ ↔ H₁: σ > σ₀ '
+                enable: (chitest)
+  - type: CollapseBox
+    label: Normal distribution - Paired Samples
+    collapsed: true
+    children:
+      - type: VariableSupplier
+        persistentItems: false
+        stretchFactor: 1
+        children:
+          - type: TargetLayoutBox
+            label: Variable 1
+            children:
+              - type: VariablesListBox
+                name: varnormalpaired1
+                maxItemCount: 1
+                isTarget: true
+          - type: TargetLayoutBox
+            label: Variable 2
+            children:
+              - type: VariablesListBox
+                name: varnormalpaired2
+                maxItemCount: 1
+                isTarget: true
+      - type: LayoutBox
+        margin: large
+        children:
+          - type: TextBox
+            name: normalphapaired
+            format: number
+      - type: LayoutBox
+        style: inline
+        stretchFactor: 1
+        margin: large
+        children:
+          - type: LayoutBox
+            stretchFactor: 1
+            margin: large
+            children:
+              - type: CheckBox
+                name: ztestpaired
+                style: inline
+                verticalAlignment: center
+                children:
+                  - type: TextBox
+                    name: ztestpairedvalue
+                    label: 'at test value δ₀ = '
+                    format: number
+                    enable: (ztestpaired)
+          - type: LayoutBox
+            stretchFactor: 1
+            margin: large
+            children:
+              - type: TextBox
+                name: ztestpairedsigma1
+                label: 'for known σ₁² = '
+                format: number
+                enable: (ztestpaired)
+              - type: TextBox
+                name: ztestpairedsigma2
+                label: 'known σ₂² = '
+                format: number
+                enable: (ztestpaired)
+              - type: TextBox
+                name: ztestpairedrho
+                label: 'known ρ = '
+                format: number
+                enable: (ztestpaired)
+              - type: RadioButton
+                name: Twoztestpaired
+                optionName: ztestpairedside
+                optionPart: twoztestpaired
+                label: 'H₀: μ₁ - μ₂ = δ₀ ↔ H₁: μ₁ - μ₂ ≠ δ₀ '
+                enable: (ztestpaired)
+              - type: RadioButton
+                name: Lowerztestpaired
+                optionName: ztestpairedside
+                optionPart: lowerztestpaired
+                label: 'H₀: μ₁ - μ₂ ≥ δ₀ ↔ H₁: μ₁ - μ₂ < δ₀ '
+                enable: (ztestpaired)
+              - type: RadioButton
+                name: Upperztestpaired
+                optionName: ztestpairedside
+                optionPart: upperztestpaired
+                label: 'H₀: μ₁ - μ₂ ≤ δ₀ ↔ H₁: μ₁ - μ₂ > δ₀ '
+                enable: (ztestpaired)
+      - type: LayoutBox
+        style: inline
+        stretchFactor: 1
+        margin: large
+        children:
+          - type: LayoutBox
+            stretchFactor: 1
+            margin: large
+            children:
+              - type: CheckBox
+                name: ttestpaired
+                style: inline
+                verticalAlignment: center
+                children:
+                  - type: TextBox
+                    name: ttestpairedvalue
+                    label: 'at test value δ₀ = '
+                    format: number
+                    enable: (ttestpaired)
+          - type: LayoutBox
+            stretchFactor: 1
+            margin: large
+            children:
+              - type: RadioButton
+                name: Twottestpaired
+                optionName: ttestpairedside
+                optionPart: twottestpaired
+                label: 'H₀: μ₁ - μ₂ = δ₀ ↔ H₁: μ₁ - μ₂ ≠ δ₀ '
+                enable: (ttestpaired)
+              - type: RadioButton
+                name: Lowerttestpaired
+                optionName: ttestpairedside
+                optionPart: lowerttestpaired
+                label: 'H₀: μ₁ - μ₂ ≥ δ₀ ↔ H₁: μ₁ - μ₂ < δ₀ '
+                enable: (ttestpaired)
+              - type: RadioButton
+                name: Upperttestpaired
+                optionName: ttestpairedside
+                optionPart: upperttestpaired
+                label: 'H₀: μ₁ - μ₂ ≤ δ₀ ↔ H₁: μ₁ - μ₂ > δ₀ '
+                enable: (ttestpaired)
+      - type: LayoutBox
+        style: inline
+        stretchFactor: 1
+        margin: large
+        children:
+          - type: LayoutBox
+            stretchFactor: 1
+            margin: large
+            children:
+              - type: CheckBox
+                name: indeptestpaired
+          - type: LayoutBox
+            stretchFactor: 1
+            margin: large
+            children:
+              - type: RadioButton
+                name: Twoindeptestpaired
+                optionName: indeptestpairedside
+                optionPart: twoindeptestpaired
+                label: 'H₀: ρ = 0 ↔ H₁: ρ ≠ 0 '
+                enable: (indeptestpaired)
+              - type: RadioButton
+                name: Lowerindeptestpaired
+                optionName: indeptestpairedside
+                optionPart: lowerindeptestpaired
+                label: 'H₀: ρ ≥ 0 ↔ H₁: ρ < 0 '
+                enable: (indeptestpaired)
+              - type: RadioButton
+                name: Upperindeptestpaired
+                optionName: indeptestpairedside
+                optionPart: upperindeptestpaired
+                label: 'H₀: ρ ≤ 0 ↔ H₁: ρ > 0 '
+                enable: (indeptestpaired)
+  - type: CollapseBox
+    label: Normal distribution - Two Independent Samples
+    collapsed: true
+    children:
+      - type: VariableSupplier
+        persistentItems: false
+        stretchFactor: 1
+        children:
+          - type: TargetLayoutBox
+            label: Variable
+            children:
+              - type: VariablesListBox
+                name: varnormalindep
+                maxItemCount: 1
+                isTarget: true
+          - type: TargetLayoutBox
+            label: Split by
+            children:
+              - type: VariablesListBox
+                name: splitnormal
+                maxItemCount: 1
+                isTarget: true
+      - type: LayoutBox
+        margin: large
+        children:
+          - type: TextBox
+            name: normalphaindep
+            format: number
+      - type: LayoutBox
+        style: inline
+        stretchFactor: 1
+        margin: large
+        children:
+          - type: LayoutBox
+            stretchFactor: 1
+            margin: large
+            children:
+              - type: CheckBox
+                name: ftest
+          - type: LayoutBox
+            stretchFactor: 1
+            margin: large
+            children:
+              - type: RadioButton
+                name: Twoftest
+                optionName: ftestside
+                optionPart: twoftest
+                label: 'H₀: σ₁ = σ₂ ↔ H₁: σ₁ ≠ σ₂ '
+                enable: (ftest)
+              - type: RadioButton
+                name: Lowerftest
+                optionName: ftestside
+                optionPart: lowerftest
+                label: 'H₀: σ₁ ≥ σ₂ ↔ H₁: σ₁ < σ₂ '
+                enable: (ftest)
+              - type: RadioButton
+                name: Upperftest
+                optionName: ftestside
+                optionPart: upperftest
+                label: 'H₀: σ₁ ≤ σ₂ ↔ H₁: σ₁ > σ₂ '
+                enable: (ftest)
+      - type: LayoutBox
+        style: inline
+        stretchFactor: 1
+        margin: large
+        children:
+          - type: LayoutBox
+            stretchFactor: 1
+            margin: large
+            children:
+              - type: CheckBox
+                name: ztestindep
+          - type: LayoutBox
+            stretchFactor: 1
+            margin: large
+            children:
+              - type: TextBox
+                name: ztestindepsigma
+                label: 'for known σ² = '
+                format: number
+                enable: (ztestindep)
+              - type: RadioButton
+                name: Twoztestindep
+                optionName: ztestindepside
+                optionPart: twoztestindep
+                label: 'H₀: μ₁ = μ₂ ↔ H₁: μ₁ ≠ μ₂ '
+                enable: (ztestindep)
+              - type: RadioButton
+                name: Lowerztestindep
+                optionName: ztestindepside
+                optionPart: lowerztestindep
+                label: 'H₀: μ₁ ≥ μ₂ ↔ H₁: μ₁ < μ₂ '
+                enable: (ztestindep)
+              - type: RadioButton
+                name: Upperztestindep
+                optionName: ztestindepside
+                optionPart: upperztestindep
+                label: 'H₀: μ₁ ≤ μ₂ ↔ H₁: μ₁ > μ₂ '
+                enable: (ztestindep)
+      - type: LayoutBox
+        style: inline
+        stretchFactor: 1
+        margin: large
+        children:
+          - type: LayoutBox
+            stretchFactor: 1
+            margin: large
+            children:
+              - type: CheckBox
+                name: ttestindep
+          - type: LayoutBox
+            stretchFactor: 1
+            margin: large
+            children:
+              - type: RadioButton
+                name: Twottestindep
+                optionName: ttestindepside
+                optionPart: twottestindep
+                label: 'H₀: μ₁ = μ₂ ↔ H₁: μ₁ ≠ μ₂ '
+                enable: (ttestindep)
+              - type: RadioButton
+                name: Lowerttestindep
+                optionName: ttestindepside
+                optionPart: lowerttestindep
+                label: 'H₀: μ₁ ≥ μ₂ ↔ H₁: μ₁ < μ₂ '
+                enable: (ttestindep)
+              - type: RadioButton
+                name: Upperttestindep
+                optionName: ttestindepside
+                optionPart: upperttestindep
+                label: 'H₀: μ₁ ≤ μ₂ ↔ H₁: μ₁ > μ₂ '
+                enable: (ttestindep)
+  - type: CollapseBox
+    label: Binomial distribution - One Sample
+    collapsed: true
+    children:
+      - type: VariableSupplier
+        persistentItems: false
+        stretchFactor: 1
+        children:
+          - type: TargetLayoutBox
+            label: Variable
+            children:
+              - type: VariablesListBox
+                name: varbinones
+                maxItemCount: 1
+                isTarget: true
+      - type: LayoutBox
+        margin: large
+        children:
+          - type: TextBox
+            name: binalphaones
+            format: number
+      - type: LayoutBox
+        style: inline
+        stretchFactor: 1
+        margin: large
+        children:
+          - type: LayoutBox
+            stretchFactor: 1
+            margin: large
+            children:
+              - type: CheckBox
+                name: exactbintest
+                style: inline
+                verticalAlignment: center
+                children:
+                  - type: TextBox
+                    name: exactbintestvalue
+                    label: 'at p₀ = '
+                    format: number
+                    enable: (exactbintest)
+          - type: LayoutBox
+            stretchFactor: 1
+            margin: large
+            children:
+              - type: RadioButton
+                name: Twoexactbintest
+                optionName: exactbintestside
+                optionPart: twoexactbintest
+                label: 'H₀: p = p₀ ↔ H₁: p ≠ p₀ '
+                enable: (exactbintest)
+              - type: RadioButton
+                name: Lowerexactbintest
+                optionName: exactbintestside
+                optionPart: lowerexactbintest
+                label: 'H₀: p ≥ p₀ ↔ H₁: p < p₀ '
+                enable: (exactbintest)
+              - type: RadioButton
+                name: Upperexactbintest
+                optionName: exactbintestside
+                optionPart: upperexactbintest
+                label: 'H₀: p ≤ p₀ ↔ H₁: p > p₀ '
+                enable: (exactbintest)
+              - type: CheckBox
+                name: exactbintestpower
+                enable: (exactbintest)
+                children:
+                  - type: TextBox
+                    name: exactbintestpowervalue
+                    label: 'at value p = '
+                    format: number
+                    enable: (exactbintest)
+              - type: CheckBox
+                name: exactbintesttypeIerror
+                style: inline
+                verticalAlignment: center
+                enable: (exactbintest)
+                children:
+                  - type: TextBox
+                    name: exactbintesttypeIerrorvalue
+                    label: ' at value p = '
+                    format: number
+                    enable: (exactbintest)
+              - type: CheckBox
+                name: exactbintesttypeIIerror
+                style: inline
+                verticalAlignment: center
+                enable: (exactbintest)
+                children:
+                  - type: TextBox
+                    name: exactbintesttypeIIerrorvalue
+                    label: 'at value p = '
+                    format: number
+                    enable: (exactbintest)
+      - type: LayoutBox
+        style: inline
+        stretchFactor: 1
+        margin: large
+        children:
+          - type: LayoutBox
+            stretchFactor: 1
+            margin: large
+            children:
+              - type: CheckBox
+                name: approxbintest
+                style: inline
+                verticalAlignment: center
+                children:
+                  - type: TextBox
+                    name: approxbintestvalue
+                    label: 'at p₀ = '
+                    format: number
+                    enable: (approxbintest)
+          - type: LayoutBox
+            stretchFactor: 1
+            margin: large
+            children:
+              - type: RadioButton
+                name: Twoapproxbintest
+                optionName: approxbintestside
+                optionPart: twoapproxbintest
+                label: 'H₀: p = p₀ ↔ H₁: p ≠ p₀ '
+                enable: (approxbintest)
+              - type: RadioButton
+                name: Lowerapproxbintest
+                optionName: approxbintestside
+                optionPart: lowerapproxbintest
+                label: 'H₀: p ≥ p₀ ↔ H₁: p < p₀ '
+                enable: (approxbintest)
+              - type: RadioButton
+                name: Upperapproxbintest
+                optionName: approxbintestside
+                optionPart: upperapproxbintest
+                label: 'H₀: p ≤ p₀ ↔ H₁: p > p₀ '
+                enable: (approxbintest)
+  - type: CollapseBox
+    label: Binomial distribution - Two Independent Samples
+    collapsed: true
+    children:
+      - type: VariableSupplier
+        persistentItems: false
+        stretchFactor: 1
+        children:
+          - type: TargetLayoutBox
+            label: Variable
+            children:
+              - type: VariablesListBox
+                name: varbintwos
+                maxItemCount: 1
+                isTarget: true
+          - type: TargetLayoutBox
+            label: Split by
+            children:
+              - type: VariablesListBox
+                name: splitbin
+                maxItemCount: 1
+                isTarget: true
+      - type: LayoutBox
+        margin: large
+        children:
+          - type: TextBox
+            name: binalphaindep
+            format: number
+      - type: LayoutBox
+        style: inline
+        stretchFactor: 1
+        margin: large
+        children:
+          - type: LayoutBox
+            stretchFactor: 1
+            margin: large
+            children:
+              - type: CheckBox
+                name: twosamplesbintest
+          - type: LayoutBox
+            stretchFactor: 1
+            margin: large
+            children:
+              - type: RadioButton
+                name: Twotwosamplesbintest
+                optionName: twosamplesbintestside
+                optionPart: twotwosamplesbintest
+                label: 'H₀: p₁ = p₂ ↔ H₁: p₁ ≠ p₂ '
+                enable: (twosamplesbintest)
+              - type: RadioButton
+                name: Lowertwosamplesbintest
+                optionName: twosamplesbintestside
+                optionPart: lowertwosamplesbintest
+                label: 'H₀: p₁ ≥ p₂ ↔ H₁: p₁ < p₂ '
+                enable: (twosamplesbintest)
+              - type: RadioButton
+                name: Uppertwosamplesbintest
+                optionName: twosamplesbintestside
+                optionPart: uppertwosamplesbintest
+                label: 'H₀: p₁ ≤ p₂ ↔ H₁: p₁ > p₂ '
+                enable: (twosamplesbintest)
+  - type: CollapseBox
+    label: Nonparametric Tests - One Sample
+    collapsed: true
+    children:
+      - type: VariableSupplier
+        persistentItems: false
+        stretchFactor: 1
+        children:
+          - type: TargetLayoutBox
+            label: Variable
+            children:
+              - type: VariablesListBox
+                name: varnonparamones
+                maxItemCount: 1
+                isTarget: true
+      - type: LayoutBox
+        margin: large
+        children:
+          - type: TextBox
+            name: nonparamalphaones
+            format: number
+      - type: LayoutBox
+        style: inline
+        stretchFactor: 1
+        margin: large
+        children:
+          - type: LayoutBox
+            stretchFactor: 1
+            margin: large
+            children:
+              - type: CheckBox
+                name: signtest
+                style: inline
+                verticalAlignment: center
+                children:
+                  - type: TextBox
+                    name: signtestvalue
+                    label: 'at test value ξ₀ = '
+                    format: number
+                    enable: (signtest)
+          - type: LayoutBox
+            stretchFactor: 1
+            margin: large
+            children:
+              - type: RadioButton
+                name: Twosigntest
+                optionName: signtestside
+                optionPart: twosigntest
+                label: 'H₀: ξ = ξ₀ ↔ H₁: ξ ≠ ξ₀ '
+                enable: (signtest)
+              - type: RadioButton
+                name: Lowersigntest
+                optionName: signtestside
+                optionPart: lowersigntest
+                label: 'H₀: ξ ≥ ξ₀ ↔ H₁: ξ < ξ₀ '
+                enable: (signtest)
+              - type: RadioButton
+                name: Uppersigntest
+                optionName: signtestside
+                optionPart: uppersigntest
+                label: 'H₀: ξ ≤ ξ₀ ↔ H₁: ξ > ξ₀ '
+                enable: (signtest)
+  - type: CollapseBox
+    label: Nonparametric Tests - Two Independent Samples
+    collapsed: true
+    children:
+      - type: VariableSupplier
+        persistentItems: false
+        stretchFactor: 1
+        children:
+          - type: TargetLayoutBox
+            label: Variable
+            children:
+              - type: VariablesListBox
+                name: varnonparamtwos
+                maxItemCount: 1
+                isTarget: true
+          - type: TargetLayoutBox
+            label: Split by
+            children:
+              - type: VariablesListBox
+                name: splitnonparam
+                maxItemCount: 1
+                isTarget: true
+      - type: LayoutBox
+        margin: large
+        children:
+          - type: TextBox
+            name: nonparamalphatwos
+            format: number
+      - type: LayoutBox
+        style: inline
+        stretchFactor: 1
+        margin: large
+        children:
+          - type: LayoutBox
+            stretchFactor: 1
+            margin: large
+            children:
+              - type: CheckBox
+                name: utest
+          - type: LayoutBox
+            stretchFactor: 1
+            margin: large
+            children:
+              - type: RadioButton
+                name: Twoutest
+                optionName: utestside
+                optionPart: twoutest
+                label: 'H₀: δ = 0 ↔ H₁: δ ≠ 0 '
+                enable: (utest)
+              - type: RadioButton
+                name: Lowerutest
+                optionName: utestside
+                optionPart: lowerutest
+                label: 'H₀: δ ≥ 0 ↔ H₁: δ < 0 '
+                enable: (utest)
+              - type: RadioButton
+                name: Upperutest
+                optionName: utestside
+                optionPart: upperutest
+                label: 'H₀: δ ≤ 0 ↔ H₁: δ > 0 '
+                enable: (utest)
+  - type: CollapseBox
+    label: Test for Independence in Contingency Tables
+    collapsed: true
+    children:
+      - type: VariableSupplier
+        persistentItems: false
+        stretchFactor: 1
+        children:
+          - type: TargetLayoutBox
+            label: Row
+            children:
+              - type: VariablesListBox
+                name: nominal1
+                maxItemCount: 1
+                isTarget: true
+          - type: TargetLayoutBox
+            label: Column
+            children:
+              - type: VariablesListBox
+                name: nominal2
+                maxItemCount: 1
+                isTarget: true
+          - type: TargetLayoutBox
+            label: Counts (Optional)
+            children:
+              - type: VariablesListBox
+                name: counts
+                maxItemCount: 1
+                isTarget: true
+      - type: LayoutBox
+        margin: large
+        children:
+          - type: CheckBox
+            name: contabs
+          - type: CheckBox
+            name: conttest
+            style: inline
+            verticalAlignment: center
+            children:
+              - type: TextBox
+                name: conttestalpha
+                format: number
+

@@ -1,0 +1,448 @@
+---
+title: Project jamovi.RWTH (2021-2026+)
+name: jamoviRWTH
+version: 2.7.29
+jms: '1.0'
+authors:
+  - Diana Rauwolf
+  - Christina Empacher
+maintainer: Diana Rauwolf <drdrauwolf@gmail.com>
+date: '2026-08-31'
+type: R
+description: >-
+  The package jamoviRWTH contains measures and analyses from the book
+  "Grundlagen der Wahrscheinlichkeitsrechnung und Statistik" by E. Cramer and U.
+  Kamps (2020). The block "Descriptives" contains the analyses for "Descriptive
+  Statistics" corresponding to chapters A1-A9 of the book. The block "Inference"
+  contains the  analyses for "Inference Statistics" corresponding to chapters
+  D3-D7 of the book. The package jamoviRWTH is designed specifically for
+  statistical literacy and teaching at different levels (university and school).
+analyses:
+  - title: Tables and Graphs (A2)
+    name: a2tablesgraphs
+    ns: jamoviRWTH
+    category: analyses
+    menuGroup: Descriptives
+    menuTitle: Tables and Graphs (A2)
+  - title: Measures of Central Tendency and Dispersion (A3)
+    name: a3descriptivemeasures
+    ns: jamoviRWTH
+    category: analyses
+    menuGroup: Descriptives
+    menuTitle: Measures of Central Tendency and Dispersion (A3)
+  - title: Grouped Data and Histograms (A4)
+    name: a4histrograms
+    ns: jamoviRWTH
+    category: analyses
+    menuGroup: Descriptives
+    menuTitle: Grouped Data and Histograms (A4)
+  - title: Measures of Concentration (A5)
+    name: a5concentrationmeasures
+    ns: jamoviRWTH
+    category: analyses
+    menuGroup: Descriptives
+    menuTitle: Measures of Concentration (A5)
+  - title: Index Numbers (A6)
+    name: a6indexnumbers
+    ns: jamoviRWTH
+    category: analyses
+    menuGroup: Descriptives
+    menuTitle: Index Numbers (A6)
+  - title: Measures of Correlation and Dependence (A7)
+    name: a7correlationmeasures
+    ns: jamoviRWTH
+    category: analyses
+    menuGroup: Descriptives
+    menuTitle: Measures of Correlation and Dependence (A7)
+  - title: Regression Analysis (A8)
+    name: a8linearregression
+    ns: jamoviRWTH
+    category: analyses
+    menuGroup: Descriptives
+    menuTitle: Regression Analysis (A8)
+  - title: Time Series Analysis (A9)
+    name: a9timeseriesanalysis
+    ns: jamoviRWTH
+    category: analyses
+    menuGroup: Descriptives
+    menuTitle: Time Series Analysis (A9)
+  - title: Maximum Likelihood Estimation (D3/D5)
+    name: d3maximumlikelihood
+    ns: jamoviRWTH
+    category: analyses
+    menuGroup: Inference
+    menuTitle: Maximum Likelihood Estimation (D3/D5)
+  - title: Confidence Intervals (D4/D5)
+    name: d4confidenceintervals
+    ns: jamoviRWTH
+    category: analyses
+    menuGroup: Inference
+    menuTitle: Confidence Intervals (D4/D5)
+  - title: Statistical Tests (D6)
+    name: d6tests
+    ns: jamoviRWTH
+    category: analyses
+    menuGroup: Inference
+    menuTitle: Statistical Tests (D6)
+  - title: Linear Regression (D7)
+    name: d7linearregression
+    ns: jamoviRWTH
+    category: analyses
+    menuGroup: Inference
+    menuTitle: Linear Regression (D7)
+datasets:
+  - name: Bsp_Wettbewerb
+    path: Bsp_Wettbewerb.csv
+    description: A 2.10, A 2.11
+  - name: Bsp_Werbekosten
+    path: Bsp_Werbekosten.csv
+    description: A 3.7
+  - name: Bsp_Fahrzeug
+    path: Bsp_Fahrzeug.csv
+    description: A 3.23
+  - name: Bsp_arMittelMedian
+    path: Bsp_arMittelMedian.csv
+    description: A 3.24
+  - name: Bsp_Koerpergroesse
+    path: Bsp_Koerpergroesse.csv
+    description: A 3.45
+  - name: Bsp_Fehltage
+    path: Bsp_Fehltage.csv
+    description: A 4.5
+  - name: Bsp_Autobahnbaustelle
+    path: Bsp_Autobahnbaustelle.csv
+    description: A 4.6, A 4.7
+  - name: Bsp_Marktentwicklung
+    path: Bsp_Marktentwicklung.csv
+    description: A 5.1, A 5.3, A 5.9, A 5.12, A 5.16, A 5.20
+  - name: Bsp_IdentischeLorenzKurven
+    path: Bsp_IdentischeLorenzKurven.csv
+    description: A 5.6
+  - name: Bsp_IdentischeGiniKoeffizienten
+    path: Bsp_IdentischeGiniKoeffizienten.csv
+    description: A 5.17, A 5.21
+  - name: Bsp_Einwohnerzahl
+    path: Bsp_Einwohnerzahl.csv
+    description: A 6.18
+  - name: Bsp_Unternehmensumsatz
+    path: Bsp_Unternehmensumsatz.csv
+    description: A 6.19, A 6.21, A. 6.22, A 6.31
+  - name: Bsp_Gehalt
+    path: Bsp_Gehalt.csv
+    description: A 6.23
+  - name: Bsp_Arbeitslosigkeit
+    path: Bsp_Arbeitslosigkeit.csv
+    description: A 6.24
+  - name: Bsp_Quartalsumsatz
+    path: Bsp_Quartalsumsatz.csv
+    description: A 6.26, A 6.28
+  - name: Bsp_Kaesesorte
+    path: Bsp_Kaesesorte.csv
+    description: A 6.29
+  - name: Bsp_Konsum
+    path: Bsp_Konsum.csv
+    description: A 6.34, A 6.36, A 6.38, A 6.40, A 6.44, A 6.56
+  - name: Bsp_Warenkorb
+    path: Bsp_Warenkorb.csv
+    description: A 6.48, A 6.50, A 6.53
+  - name: Bsp_Bekleidung
+    path: Bsp_Bekleidung.csv
+    description: A 6.57, A 6.59
+  - name: Bsp_Partnervermittlung
+    path: Bsp_Partnervermittlung.csv
+    description: A 7.1
+  - name: Bsp_Schaedlingsbefall
+    path: Bsp_Schaedlingsbefall.csv
+    description: A 7.3
+  - name: Bsp_GewichtKoerpergroesse
+    path: Bsp_GewichtKoerpergroesse.csv
+    description: A 7.21
+  - name: Bsp_UntersuchungJugendliche
+    path: Bsp_UntersuchungJugendliche.csv
+    description: A 7.26
+  - name: Bsp_Korrelationskoeffizient
+    path: Bsp_Korrelationskoeffizient.csv
+    description: A 7.32
+  - name: Bsp_PunktzahlenExamensklausur
+    path: Bsp_PunktzahlenExamensklausur.csv
+    description: A 7.39
+  - name: Bsp_Werbeaktion
+    path: Bsp_Werbeaktion.csv
+    description: A 8.1, A 8.3, A 8.6
+  - name: Bsp_Bruttowochenverdienst
+    path: Bsp_Bruttowochenverdienst.csv
+    description: A 8.8, A 8.16
+  - name: Bsp_Abfuellanlage
+    path: Bsp_Abfuellanlage.csv
+    description: A 8.17
+  - name: Bsp_RegressionLinearQuadratisch
+    path: Bsp_RegressionLinearQuadratisch.csv
+    description: A 8.19
+  - name: Bsp_Aktienkurs
+    path: Bsp_Aktienkurs.csv
+    description: A 9.3
+  - name: Bsp_Aktienindex
+    path: Bsp_Aktienindex.csv
+    description: A 9.4
+  - name: Bsp_Bevoelkerungszahl
+    path: Bsp_Bevoelkerungszahl.csv
+    description: A 9.6
+  - name: Bsp_GleitendeDurchschnitte
+    path: Bsp_GleitendeDurchschnitte.csv
+    description: A 9.8
+  - name: Bsp_AufgabeA10_1
+    path: Bsp_AufgabeA10_1.csv
+    description: Beispielaufgabe A 10.1
+  - name: Bsp_AufgabeA10_2
+    path: Bsp_AufgabeA10_2.csv
+    description: Beispielaufgabe A 10.2
+  - name: Bsp_AufgabeA10_3
+    path: Bsp_AufgabeA10_3.csv
+    description: Beispielaufgabe A 10.3
+  - name: Bsp_AufgabeA10_4
+    path: Bsp_AufgabeA10_4.csv
+    description: Beispielaufgabe A 10.4
+  - name: Bsp_AufgabeA10_5
+    path: Bsp_AufgabeA10_5.csv
+    description: Beispielaufgabe A 10.5
+  - name: Bsp_MaximumLikelihood
+    path: Bsp_MaximumLikelihood.csv
+    description: D 3.3
+  - name: Bsp_Todesfaelle
+    path: Bsp_Todesfaelle.csv
+    description: D 3.6
+  - name: Bsp_Wartezeit
+    path: Bsp_Wartezeit.csv
+    description: D 3.8
+  - name: Bsp_Vorstandsvorsitzende
+    path: Bsp_Vorstandsvorsitzende.csv
+    description: D 4.7, D 6.52, D 6.57
+  - name: Bsp_Fuellmengenkontrolle
+    path: Bsp_Fuellmengenkontrolle.csv
+    description: D 6.19, D 6.22, D 6.24, D 6.27, D 6.31, D 6.34, D 6.37, D 6.46, D 6.50
+  - name: Bsp_Filialen
+    path: Bsp_Filialen.csv
+    description: D 6.40
+  - name: Bsp_100Bauteile
+    path: Bsp_100Bauteile.csv
+    description: D 6.59 (1)
+  - name: Bsp_1000Bauteile
+    path: Bsp_1000Bauteile.csv
+    description: D 6.59 (2)
+  - name: Bsp_Therapie
+    path: Bsp_Therapie.csv
+    description: D 6.63
+  - name: Bsp_Geschwindigkeitsmessung
+    path: Bsp_Geschwindigkeitsmessung.csv
+    description: D 6.68
+  - name: Bsp_Kaufverhalten
+    path: Bsp_Kaufverhalten.csv
+    description: D 6.78
+  - name: Bsp_Abfuellanlage (D)
+    path: Bsp_Abfuellanlage_D.csv
+    description: A 8.17, D 7.14, D 7.16
+  - name: Bsp_AufgabeD9_1
+    path: Bsp_AufgabeD9_1.csv
+    description: Beispielaufgabe D 9.1
+  - name: Bsp_AufgabeD9_4
+    path: Bsp_AufgabeD9_4.csv
+    description: Beispielaufgabe D 9.4
+  - name: Bsp_AufgabeD9_5
+    path: Bsp_AufgabeD9_5.csv
+    description: Beispielaufgabe D 9.5
+  - name: Bsp_AufgabeD9_8
+    path: Bsp_AufgabeD9_8.csv
+    description: Beispielaufgabe D 9.8
+  - name: Bsp_AufgabeD9_9_a
+    path: Bsp_AufgabeD9_9_a.csv
+    description: Beispielaufgabe D 9.9 (a)
+  - name: Bsp_AufgabeD9_9_b
+    path: Bsp_AufgabeD9_9_b.csv
+    description: Beispielaufgabe D 9.9 (b)
+  - name: Bsp_AufgabeD9_11
+    path: Bsp_AufgabeD9_11.csv
+    description: Beispielaufgabe D 9.11
+  - name: Bsp_AufgabeD9_12
+    path: Bsp_AufgabeD9_12.csv
+    description: Beispielaufgabe D 9.12
+  - name: Ex_Competition
+    path: Ex_Competition.csv
+    description: A 2.10, A 2.11
+  - name: Ex_AdvertisingCosts
+    path: Ex_AdvertisingCosts.csv
+    description: A 3.7
+  - name: Ex_Vehicle
+    path: Ex_Vehicle.csv
+    description: A 3.23
+  - name: Ex_arMeanMedian
+    path: Ex_arMeanMedian.csv
+    description: A 3.24
+  - name: Ex_BodySize
+    path: Ex_BodySize.csv
+    description: A 3.45
+  - name: Ex_AbsentDays
+    path: Ex_AbsentDays.csv
+    description: A 4.5
+  - name: Ex_HighwayConstructionSite
+    path: Ex_HighwayConstructionSite.csv
+    description: A 4.6, A 4.7
+  - name: Ex_MarketDevelopment
+    path: Ex_MarketDevelopment.csv
+    description: A 5.1, A 5.3, A 5.9, A 5.12, A 5.16, A 5.20
+  - name: Ex_IdenticalLorenzCurves
+    path: Ex_IdenticalLorenzCurves.csv
+    description: A 5.6
+  - name: Ex_IdenticalGiniCoefficients
+    path: Ex_IdenticalGiniCoefficients.csv
+    description: A 5.17, A 5.21
+  - name: Ex_Population
+    path: Ex_Population.csv
+    description: A 6.18
+  - name: Ex_CompanySales
+    path: Ex_CompanySales.csv
+    description: A 6.19, A 6.21, A. 6.22, A 6.31
+  - name: Ex_Salary
+    path: Ex_Salary.csv
+    description: A 6.23
+  - name: Ex_Unemployment
+    path: Ex_Unemployment.csv
+    description: A 6.24
+  - name: Ex_QuarterlySales
+    path: Ex_QuarterlySales.csv
+    description: A 6.26, A 6.28
+  - name: Ex_cheeseType
+    path: Ex_cheeseType.csv
+    description: A 6.29
+  - name: Ex_Consumption
+    path: Ex_Consumption.csv
+    description: A 6.34, A 6.36, A 6.38, A 6.40, A 6.44, A 6.56
+  - name: Ex_MarketBasket
+    path: Ex_MarketBasket.csv
+    description: A 6.48, A 6.50, A 6.53
+  - name: Ex_Clothing
+    path: Ex_Clothing.csv
+    description: A 6.57, A 6.59
+  - name: Ex_DatingAgency
+    path: Ex_DatingAgency.csv
+    description: A 7.1
+  - name: Ex_PestInfestation
+    path: Ex_PestInfestation.csv
+    description: A 7.3
+  - name: Ex_WeightSize
+    path: Ex_WeightSize.csv
+    description: A 7.21
+  - name: Ex_Teenagers
+    path: Ex_Teenagers.csv
+    description: A 7.26
+  - name: Ex_CorrelationCoefficient
+    path: Ex_CorrelationCoefficient.csv
+    description: A 7.32
+  - name: Ex_ScoresExam
+    path: Ex_ScoresExam.csv
+    description: A 7.39
+  - name: Ex_Promotion
+    path: Ex_Promotion.csv
+    description: A 8.1, A 8.3, A 8.6
+  - name: Ex_GrossWeeklyEarnings
+    path: Ex_GrossWeeklyEarnings.csv
+    description: A 8.8, A 8.16
+  - name: Ex_FillingPlant
+    path: Ex_FillingPlant.csv
+    description: A 8.17
+  - name: Ex_LinearQuadraticRegression
+    path: Ex_LinearQuadraticRegression.csv
+    description: A 8.19
+  - name: Ex_SharePrice
+    path: Ex_SharePrice.csv
+    description: A 9.3
+  - name: Ex_StockIndex
+    path: Ex_StockIndex.csv
+    description: A 9.4
+  - name: Ex_PopulationSize
+    path: Ex_PopulationSize.csv
+    description: A 9.6
+  - name: Ex_MovingAverages
+    path: Ex_MovingAverages.csv
+    description: A 9.8
+  - name: Ex_ExerciseA10_1
+    path: Ex_ExerciseA10_1.csv
+    description: Exercise A 10.1
+  - name: Ex_ExerciseA10_2
+    path: Ex_ExerciseA10_2.csv
+    description: Exercise A 10.2
+  - name: Ex_ExerciseA10_3
+    path: Ex_ExerciseA10_3.csv
+    description: Exercise A 10.3
+  - name: Ex_ExerciseA10_3
+    path: Ex_ExerciseA10_3.csv
+    description: Exercise A 10.3
+  - name: Ex_ExerciseA10_4
+    path: Ex_ExerciseA10_4.csv
+    description: Exercise A 10.4
+  - name: Ex_ExerciseA10_5
+    path: Ex_ExerciseA10_5.csv
+    description: Exercise A 10.5
+  - name: Ex_MaximumLikelihood
+    path: Ex_MaximumLikelihood.csv
+    description: D 3.3
+  - name: Ex_Fatalities
+    path: Ex_Fatalities.csv
+    description: D 3.6
+  - name: Ex_WaitingTime
+    path: Ex_WaitingTime.csv
+    description: D 3.8
+  - name: Ex_CEOs
+    path: Ex_CEOs.csv
+    description: D 4.7, D 6.52, D 6.57
+  - name: Ex_FillingQuantityMonitoring
+    path: Ex_FillingQuantityMonitoring.csv
+    description: D 6.19, D 6.22, D 6.24, D 6.27, D 6.31, D 6.34, D 6.37, D 6.46, D 6.50
+  - name: Ex_Branches
+    path: Ex_Branches.csv
+    description: D 6.40
+  - name: Ex_100Components
+    path: Ex_100Components.csv
+    description: D 6.59 (1)
+  - name: Ex_1000Components
+    path: Ex_1000Components.csv
+    description: D 6.59 (2)
+  - name: Ex_Therapy
+    path: Ex_Therapy.csv
+    description: D 6.63
+  - name: Ex_SpeedMeasurement
+    path: Ex_SpeedMeasurement.csv
+    description: D 6.68
+  - name: Ex_ConsumerBehaviour
+    path: Ex_ConsumerBehaviour.csv
+    description: D 6.78
+  - name: Ex_FillingPlant (D)
+    path: Ex_FillingPlant_D.csv
+    description: A 8.17, D 7.14, D 7.16
+  - name: Ex_ExerciseD9_1
+    path: Ex_ExerciseD9_1.csv
+    description: Exercise D 9.1
+  - name: Ex_ExerciseD9_4
+    path: Ex_ExerciseD9_4.csv
+    description: Exercise D 9.4
+  - name: Ex_ExerciseD9_5
+    path: Ex_ExerciseD9_5.csv
+    description: Exercise D 9.5
+  - name: Ex_ExerciseD9_8
+    path: Ex_ExerciseD9_8.csv
+    description: Exercise D 9.8
+  - name: Ex_ExerciseD9_9_a
+    path: Ex_ExerciseD9_9_a.csv
+    description: Exercise D 9.9 (a)
+  - name: Ex_ExerciseD9_9_b
+    path: Ex_ExerciseD9_9_b.csv
+    description: Exercise D 9.9 (b)
+  - name: Ex_ExerciseD9_11
+    path: Ex_ExerciseD9_11.csv
+    description: Exercise D 9.11
+  - name: Ex_ExerciseD9_12
+    path: Ex_ExerciseD9_12.csv
+    description: Exercise D 9.12
+usesNative: true
+minApp: 1.0.8
+
+...

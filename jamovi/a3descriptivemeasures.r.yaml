@@ -1,0 +1,39 @@
+---
+name:  a3descriptivemeasures
+title: Measures of Central Tendency and Dispersion (A3)
+jrs:   '1.1'
+
+items:
+    - name: order
+      title: order statistics
+      type: Output
+      varTitle: order statistics
+      varDescription: order statistics of Variable
+      measureType: continuous
+      
+    - name: rank
+      title: Rank
+      type: Output
+      varTitle: Rank
+      varDescription: Ranks of Variable
+      measureType: continuous
+      
+    - name: Central
+      title: Measures of Central Tendency
+      visible: (min || uQuart || mod || med|| mean || geomean || harmmean || oQuart || max | quant)
+      type: Table
+      columns: []
+          
+    - name: Disp
+      title: Measures of Dispersion
+      visible: (range || QAbst || varianz || stAbw || absAbw || varkoeff)
+      type: Table
+      columns: []
+          
+    - name: boxplot
+      title: Boxplot
+      type: Image
+      visible: (box & !is.null(vars))
+      renderFun: .plot
+
+...

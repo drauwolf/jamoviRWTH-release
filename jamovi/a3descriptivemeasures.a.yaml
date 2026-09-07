@@ -1,0 +1,178 @@
+---
+name:  a3descriptivemeasures
+title: Measures of Central Tendency and Dispersion (A3)
+menuGroup: Descriptives
+version: '1.0.0'
+jas: '1.2'
+
+options:
+    - name: data
+      type: Data
+      
+    - name: varrank
+      title: Variable
+      type: Variable
+      permitted:
+        - factor
+        - numeric
+      suggested:
+        - ordinal
+        - continuous
+        
+    - name: rank
+      title: Rank
+      type: Output
+      
+    - name: order
+      title: Order statistics
+      type: Output
+
+    - name: vars
+      title: Variables
+      type: Variables
+      permitted:
+        - factor
+        - numeric
+      suggested:
+        - ordinal
+        - continuous
+    
+    - name: group
+      title: Split by
+      type: Variable
+      permitted:
+        - factor
+      suggested: 
+        - nominal
+        - ordinal
+        
+    - name: Gew
+      title: Weights
+      type: Variable
+      permitted:
+        - numeric
+      suggested:
+        - continuous
+      
+    - name: min
+      title: Minimum
+      type: Bool
+      default: false
+      
+    - name: uQuart
+      title: Lower quartile
+      type: Bool
+      default: false
+    
+    - name: mod
+      title: Mode
+      type: Bool
+      default: false
+      
+    - name: med
+      title: Median
+      type: Bool
+      default: false
+      
+    - name: mean
+      title: Arithmetic mean
+      type: Bool
+      default: false
+      
+    - name: wmean
+      title: weighted
+      type: Bool
+      default: false
+      
+    - name: geomean
+      title: Geometric mean
+      type: Bool
+      default: false
+      
+    - name: wgeomean
+      title: weighted
+      type: Bool
+      default: false
+      
+    - name: harmmean
+      title: Harmonic mean
+      type: Bool
+      default: false
+      
+    - name: wharmmean
+      title: weighted
+      type: Bool
+      default: false
+      
+    - name: oQuart
+      title: Upper quartile
+      type: Bool
+      default: false
+      
+    - name: max
+      title: Maximum
+      type: Bool
+      default: false
+      
+    - name: quant
+      title: Quantile
+      type: Bool
+      default: false
+      
+    - name: pquant
+      title: ''
+      type: String
+      default: "5,10,15"
+
+      
+    - name: varianz
+      title: Empirical variance
+      type: Bool
+      default: false
+      
+    - name: stAbw
+      title: Empirical standard deviation
+      type: Bool
+      default: false
+      
+    - name: varkoeff
+      title: Variational coefficient
+      type: Bool
+      default: false
+      
+    - name: QAbst
+      title: Interquartile range
+      type: Bool
+      default: false
+    
+    - name: range
+      title: Range
+      type: Bool
+      default: false
+      
+    - name: absAbw
+      title: Median absolute deviation
+      type: Bool
+      default: false
+      
+    - name: box
+      title: Boxplot
+      type: Bool
+      default: false
+      
+    - name: variante
+      type: List
+      options: 
+        - name: base
+        - name: modified
+      default: base
+    
+    - name: Richtung
+      type: List
+      options: 
+        - name: horizontal
+        - name: vertical
+      default: horizontal
+        
+      
+...

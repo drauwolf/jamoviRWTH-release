@@ -1,0 +1,374 @@
+---
+name:  d6tests
+title: Statistical Tests (D6)
+jrs:   '1.1'
+
+items:
+    - name:  ztest
+      title: Z-Test
+      visible: (ztest && !is.null(varnormalones))
+      type: Table
+      rows:  0
+      columns:
+        - name: signlevel
+          title: 'α'
+          type: number
+        - name: statistic
+          title: 'Statistic'
+          type: number 
+          visible: (ztest)
+        - name: c
+          title: 'c'
+          type: number
+          visible: (ztest)
+        - name: decision
+          title: 'Decision rule'
+          type: text 
+          visible: (ztest)
+        - name: power
+          title: 'G(μ)'
+          type: number
+          visible: (ztestpower)
+        - name: typeI
+          title: 'α(μ)'
+          type: number
+          visible: (ztesttypeIerror)
+        - name: typeII
+          title: 'β(μ)'
+          type: number
+          visible: (ztesttypeIIerror)
+        - name: minn
+          title: 'n≥'
+          type: number
+          visible: (ztestexpdesign)
+
+    - name:  ttest
+      title: t-Test
+      visible: (ttest && !is.null(varnormalones))
+      type: Table
+      rows:  0
+      columns:
+        - name: signlevel
+          title: 'α'
+          type: number
+        - name: statistic
+          title: 'Statistic'
+          type: number
+        - name: c
+          title: 'c'
+          type: number
+        - name: decision
+          title: 'Decision rule'
+          type: text 
+
+    - name:  chitestknownmu
+      title: χ²-Test with known μ
+      visible: (chitestknownmu && !is.null(varnormalones))
+      type: Table
+      rows:  0
+      columns:
+        - name: signlevel
+          title: 'α'
+          type: number
+        - name: statistic
+          title: 'Statistic'
+          type: number
+        - name: c
+          title: 'c'
+          type: number
+        - name: d
+          title: 'd'
+          type: number
+          visible: (chitestknownmu && chitestsideknownmu=='twochitestknownmu')
+        - name: decision
+          title: 'Decision rule'
+          type: text 
+
+    - name:  chitest
+      title: χ²-Test with unknown μ
+      visible: (chitest && !is.null(varnormalones))
+      type: Table
+      rows:  0
+      columns:
+        - name: signlevel
+          title: 'α'
+          type: number
+        - name: statistic
+          title: 'Statistic'
+          type: number
+        - name: c
+          title: 'c'
+          type: number
+        - name: d
+          title: 'd'
+          type: number
+          visible: (chitest && chitestside=='twochitest')
+        - name: decision
+          title: 'Decision rule'
+          type: text 
+
+    - name:  ztestpaired
+      title: Paired samples Z-Test
+      visible: (ztestpaired && !is.null(varnormalpaired1) && !is.null(varnormalpaired2))
+      type: Table
+      rows:  0
+      columns:
+        - name: signlevel
+          title: 'α'
+          type: number
+        - name: statistic
+          title: 'Statistic'
+          type: number
+        - name: c
+          title: 'c'
+          type: number
+        - name: decision
+          title: 'Decision rule'
+          type: text 
+
+    - name:  ttestpaired
+      title: Paired samples t-Test
+      visible: (ttestpaired && !is.null(varnormalpaired1) && !is.null(varnormalpaired2))
+      type: Table
+      rows:  0
+      columns:
+        - name: signlevel
+          title: 'α'
+          type: number
+        - name: statistic
+          title: 'Statistic'
+          type: number
+        - name: c
+          title: 'c'
+          type: number
+        - name: decision
+          title: 'Decision rule'
+          type: text 
+
+    - name:  indeptestpaired
+      title: Independence test for paired samples
+      visible: (indeptestpaired && !is.null(varnormalpaired1) && !is.null(varnormalpaired2))
+      type: Table
+      rows:  0
+      columns:
+        - name: signlevel
+          title: 'α'
+          type: number
+        - name: statistic
+          title: 'Statistic'
+          type: number
+        - name: c
+          title: 'c'
+          type: number
+        - name: decision
+          title: 'Decision rule'
+          type: text 
+
+    - name:  ftest
+      title: F-Test for two variances
+      visible: (ftest && !is.null(varnormalindep))
+      type: Table
+      rows:  0
+      columns:
+        - name: signlevel
+          title: 'α'
+          type: number
+        - name: statistic
+          title: 'Statistic'
+          type: number
+        - name: c
+          title: 'c'
+          type: number
+        - name: d
+          title: 'd'
+          type: number 
+          visible: (ftest && ftestside=='twoftest')
+        - name: decision
+          title: 'Decision rule'
+          type: text 
+
+    - name:  ztestindep
+      title: Independent samples Z-Test
+      visible: (ztestindep && !is.null(varnormalindep))
+      type: Table
+      rows:  0
+      columns:
+        - name: signlevel
+          title: 'α'
+          type: number
+        - name: statistic
+          title: 'Statistic'
+          type: number
+        - name: c
+          title: 'c'
+          type: number
+        - name: decision
+          title: 'Decision rule'
+          type: text 
+
+    - name:  ttestindep
+      title: Independent samples t-Test
+      visible: (ttestindep && !is.null(varnormalindep))
+      type: Table
+      rows:  0
+      columns:
+        - name: signlevel
+          title: 'α'
+          type: number
+        - name: statistic
+          title: 'Statistic'
+          type: number
+        - name: c
+          title: 'c'
+          type: number
+        - name: decision
+          title: 'Decision rule'
+          type: text 
+
+    - name:  exactbintest
+      title: Exact binomial test
+      visible: (exactbintest && !is.null(varbinones))
+      type: Table
+      rows:  0
+      columns:
+        - name: signlevel
+          title: 'α'
+          type: number
+        - name: statistic
+          title: 'Statistic'
+          type: number 
+          visible: (exactbintest)
+        - name: c
+          title: 'c'
+          type: number
+          visible: (exactbintest)
+        - name: d
+          title: 'd'
+          type: number
+          visible: (exactbintest && exactbintestside=='twoexactbintest')
+        - name: decision
+          title: 'Decision rule'
+          type: text 
+          visible: (exactbintest)
+        - name: power
+          title: 'G(p)'
+          type: number
+          visible: (exactbintestpower)
+        - name: typeI
+          title: 'α(p)'
+          type: number
+          visible: (exactbintesttypeIerror)
+        - name: typeII
+          title: 'β(p)'
+          type: number
+          visible: (exactbintesttypeIIerror)
+          
+    - name:  approxbintest
+      title: Approx. binomial test
+      visible: (approxbintest && !is.null(varbinones))
+      type: Table
+      rows:  0
+      columns:
+        - name: signlevel
+          title: 'α'
+          type: number
+        - name: statistic
+          title: 'Statistic'
+          type: number    
+        - name: c
+          title: 'c'
+          type: number
+        - name: decision
+          title: 'Decision rule'
+          type: text 
+
+    - name:  approxtwosamplebintest
+      title: Approximative two samples binomial test
+      visible: (twosamplesbintest && !is.null(varbintwos) && !is.null(splitbin))
+      type: Table
+      rows:  0
+      columns:
+        - name: signlevel
+          title: 'α'
+          type: number
+        - name: statistic
+          title: 'Statistic'
+          type: number    
+        - name: c
+          title: 'c'
+          type: number
+        - name: decision
+          title: 'Decision rule'
+          type: text 
+
+    - name:  signtest
+      title: Sign test
+      visible: (signtest && !is.null(varnonparamones))
+      type: Table
+      rows:  0
+      columns:
+        - name: signlevel
+          title: 'α'
+          type: number
+        - name: statistic
+          title: 'Statistic'
+          type: number    
+        - name: c
+          title: 'c'
+          type: number
+        - name: d
+          title: 'd'
+          type: number
+          visible: (signtest && signtestside=='twosigntest')
+        - name: decision
+          title: 'Decision rule'
+          type: text 
+
+    - name:  utest
+      title: Mann-Whitney U-Test
+      visible: (utest & !is.null(varnonparamtwos) & !is.null(splitnonparam))
+      type: Table
+      rows:  0
+      columns:
+        - name: signlevel
+          title: 'α'
+          type: number
+        - name: statistic
+          title: 'Statistic'
+          type: number    
+        - name: c
+          title: 'c'
+          type: number
+        - name: decision
+          title: 'Decision rule'
+          type: text 
+
+    - name: absfreqstable
+      title: Contingency table with absolute frequencies
+      visible: (contabs & !is.null(nominal1) & !is.null(nominal2))
+      type: Table
+      description: a table of proportions
+      columns: [ ]
+      
+    - name:  contindependencetest
+      title: χ² test for independence
+      visible: (conttest & !is.null(nominal1) & !is.null(nominal2))
+      type: Table
+      rows:  0
+      columns:
+        - name: signlevel
+          title: 'α'
+          type: number
+        - name: statistic
+          title: 'Statistic'
+          type: number    
+        - name: c
+          title: 'c'
+          type: number
+        - name: decision
+          title: 'Decision rule'
+          type: text 
+
+
+
+...

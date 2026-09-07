@@ -1,0 +1,33 @@
+---
+name:  a9timeseriesanalysis
+title: Time Series Analysis (A9)
+jrs:   '1.1'
+
+items:
+    - name: run
+      title: 'Run chart'
+      type: Image
+      visible: (runchart & !is.null(var))
+      width: 500
+      height: 300
+      renderFun: .plot
+      
+    - name: reg
+      title: Regression
+      type: Output
+      varTitle: y_hut reg
+      measureType: continuous
+      
+    - name: movavOS
+      title: gOS
+      type: Output
+      varTitle: y_hut woS
+      measureType: continuous
+        
+    - name: movavMS
+      title: gMS
+      type: Output
+      varTitle: y_hut wS
+      measureType: continuous
+
+...

@@ -1,0 +1,55 @@
+---
+name:  a9timeseriesanalysis
+title: Time Series Analysis (A9)
+menuGroup: Descriptives
+version: '1.0.0'
+jas: '1.2'
+
+options:
+    - name: data
+      type: Data
+
+    - name: var
+      title: Variable
+      type: Variable
+      permitted:
+        - numeric
+      suggested:
+        - continuous
+        
+    - name: time
+      title: Time variable
+      type: Variable
+      permitted:
+        - numeric
+      suggested:
+        - continuous
+
+    - name: runchart
+      title: Run chart
+      type: Bool
+      default: false
+      
+    - name: addest
+      title: Add estimation
+      type: Bool
+      default: false
+      
+    - name: reg
+      title: Regression without seasonality
+      type: Output
+      
+    - name: movavOS
+      title: Moving averages without seasonality
+      type: Output
+      
+    - name: Ordnung
+      title: order or period length
+      type: String
+      default: "2"
+    
+    - name: movavMS
+      title: Moving averages with seasonality
+      type: Output
+    
+...

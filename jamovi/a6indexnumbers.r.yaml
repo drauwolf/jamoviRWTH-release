@@ -1,0 +1,68 @@
+---
+name:  a6indexnumbers
+title: Index Numbers (A6)
+jrs:   '1.1'
+
+items:
+    - name: indexnum
+      title: Index number
+      type: Output
+      varTitle: Index Number
+      varDescription: Computed index number
+      measureType: continuous
+      
+    - name: growthfac
+      title: Growth factor
+      type: Output
+      varTitle: Growth factor
+      varDescription: Computed growth factor
+      measureType: continuous
+      
+    - name: growthrate
+      title: Growth rate
+      type: Output
+      varTitle: Grwoth rate
+      varDescription: Computed growth rate
+      measureType: continuous
+      
+    - name: Indices
+      title: 'Indices'
+      visible: (plas && !is.null(basket0) && !is.null(price0) && !is.null(baskett) && !is.null(pricet) || ppaa && !is.null(basket0) && !is.null(price0) && !is.null(baskett) && !is.null(pricet) || pfi && !is.null(basket0) && !is.null(price0) && !is.null(baskett) && !is.null(pricet) || qlas && !is.null(basket0) && !is.null(price0) && !is.null(baskett) && !is.null(pricet) || qpaa && !is.null(basket0) && !is.null(price0) && !is.null(baskett) && !is.null(pricet) || qfi && !is.null(basket0) && !is.null(price0) && !is.null(baskett) && !is.null(pricet) || val && !is.null(basket0) && !is.null(price0) && !is.null(baskett) && !is.null(pricet))
+      type: Table
+      rows: 0
+      columns:
+        - name: plas
+          title: 'Price index Laspeyres'
+          type: number
+          visible: (plas)
+        - name: ppaa
+          title: 'Price index Paasche'
+          type: number
+          visible: (ppaa)
+        - name: pfi
+          title: 'Price index Fisher'
+          type: number
+          visible: (pfi)
+        - name: qlas
+          title: 'Quantity index Laspeyres'
+          type: number
+          visible: (qlas)
+        - name: qpaa
+          title: 'Quantity index Paasche'
+          type: number
+          visible: (qpaa)
+        - name: qfi
+          title: 'Quantity index Fisher'
+          type: number
+          visible: (qfi)
+        - name: val
+          title : 'Value index'
+          type: number
+          visible: (val)
+          
+    - name: WW
+      title: Value of the baskets
+      type: Preformatted
+      visible: (valBask && !is.null(basket0) && !is.null(price0) && !is.null(baskett) && !is.null(pricet))
+
+...

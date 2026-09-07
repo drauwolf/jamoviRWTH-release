@@ -1,0 +1,91 @@
+---
+name:  a2tablesgraphs
+title: Tables and Graphs (A2)
+menuGroup: Descriptives
+version: '1.0.0'
+jas: '1.2'
+
+options:
+    - name: data
+      type: Data
+
+    - name: vars
+      title: Dependent Variables
+      type: Variables
+      permitted:
+        - factor
+        - id
+        - numeric
+      suggested:
+        - nominal
+        - ordinal
+        
+    - name: ecdf
+      title: Variables
+      type: Variables
+      permitted:
+        - numeric
+      suggested:
+        - ordinal
+        - continuous       
+      
+    - name: absH
+      title: Frequency distribution
+      type: Bool
+      default: false
+      
+    - name: cumH
+      title: Cumulative frequency distribution
+      type: Bool
+      default: false
+      
+    - name: stick
+      title: Stick chart 
+      type: Bool
+      default: false
+      
+    - name: stickrel
+      title: with rel. frequencies 
+      type: Bool
+      default: false      
+      
+    - name: vbar
+      title: Vertical bar chart
+      type: Bool
+      default: false
+      
+    - name: vbarrel
+      title: with rel. frequencies
+      type: Bool
+      default: false
+      
+    - name: hbar
+      title: Horizontal bar chart
+      type: Bool
+      default: false
+      
+    - name: hbarrel
+      title: with rel. frequencies
+      type: Bool
+      default: false
+      
+    - name: pie
+      title: Pie chart
+      type: Bool
+      default: false
+      
+    - name: line
+      title: Line chart
+      type: Bool
+      default: false
+      
+    - name: linerel
+      title: with rel. frequencies
+      type: Bool
+      default: false
+      
+    - name: empV
+      title: Empirical distribution function
+      type: Bool
+      default: false
+...
